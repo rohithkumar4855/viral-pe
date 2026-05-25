@@ -18,19 +18,19 @@ import {
 
 import Nike from "../../../public/images/nike.png";
 import verified from "../../../public/images/verified.svg"
-import thunder from "../../../public/images/Thunder.png"
+import thunder from "../../../public/images/thunder.png"
 import fashion from "../../../public/images/fashion.svg"
 import footwear from "../../../public/images/footwear.svg"
 import accessories from "../../../public/images/accesories.svg"
 import cashback from "../../../public/images/cash-backlogo.svg"
-import copycodeicon from "../../../public/images/Copyicon.svg";
-import Bag from "../../../public/images/Myntrabag.svg";
+import copycodeicon from "../../../public/images/copyicon.svg";
+import Bag from "../../../public/images/myntrabag.svg";
 import ticket from "../../../public/images/ticket.svg";
 import wallet from "../../../public/images/wallet.svg";
 import myntra from "../../../public/images/myntra.png";
 import starbucks from "../../../public/images/starbucks.png";
 import lock from "../../../public/images/lock.png";
-import Gift from "../../../public/images/Gift.svg";
+import Gift from "../../../public/images/gift.svg";
 import success from "../../../public/images/success.svg";
 
 export default function CashbackCardList() {
