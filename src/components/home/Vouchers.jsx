@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import lockicon from "../../../public/images/lock.png";
 import verified from "../../../public/images/verified.png";
-import Thunder from "../../../public/images/Thunder.png";
+import Thunder from "../../../public/images/thunder.png";
 import myntra from "../../../public/images/myntra.png";
 import starbucks from "../../../public/images/starbucks.png";
 import nike from "../../../public/images/nike.png";
