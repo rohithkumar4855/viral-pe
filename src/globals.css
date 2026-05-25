@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+:root {
+  --primary-red: #901C27;
+  --text-dark: #222222;
+  --white: #ffffff;
+  --bg-cardone: #ffedee;
+
+  --bg-home: radial-gradient(
+    circle at top left,
+    rgba(144, 28, 39, 0.05) 0%,
+    transparent 35%
+  );
+}
+
+.button-class {
+  background-color: var(--primary-red);
+  color: var(--white);
+}
