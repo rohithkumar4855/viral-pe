@@ -1,7 +1,7 @@
 import Container from "../../layout/Container";
 import city from "../../../public/images/city.png";
-import Arrow from "../../../public/images/Arrow.png";
-import Hill from "../../../public/images/Hill.png";
+import Arrow from "../../../public/images/arrow.png";
+import Hill from "../../../public/images/hill.png";
 
 const companyFeatures = [
   {
