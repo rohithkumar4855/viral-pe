@@ -3,9 +3,7 @@ import Container from "../../layout/Container";
 import Button from "../ui/Button";
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
-import homescreen from "../../../public/images/Homescreen1.png";
-import Frame_1 from "../../../public/images/Frame_1.png";
-import Frame_2 from "../../../public/images/Frame_2.png";
+import homescreen from "../../../public/images/homescreen1.png";
 import { ArrowLeft, ChevronDown } from "lucide-react";
 
 
