@@ -51,21 +51,21 @@ export const WalletandEarningsCard =[
   },
   {
     id: 4,
-    icon: "/images/Overlay.png",
+    icon: "/images/overlay.png",
     title: "Total Cashback",
     amount: "₹ 5,000.00",
 
   },
    {
     id: 5,
-    icon: "/images/Overlay.png",
+    icon: "/images/overlay.png",
     title: " Referral Bonus",
     amount: "₹ 5,000.00",
     
   },
    {
     id: 6,
-    icon: "/images/Overlay.png",
+    icon: "/images/overlay.png",
     title: "Reversal Wallet",
     amount: "₹5,000.00",
 
