@@ -1,5 +1,5 @@
 import Container from "../../layout/Container";
-import Handsimage from "../../../public/images/hands.png";
+import handsimage from "../../../public/images/hands.png";
 
 export default function CashBackCard() {
   return (
