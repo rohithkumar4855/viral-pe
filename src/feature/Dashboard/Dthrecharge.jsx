@@ -1,5 +1,5 @@
 import React from "react";
-import thunder from "../../../public/images/Thunder.png";
+import thunder from "../../../public/images/thunder.png";
 import wallet from "../../../public/images/wallet.svg";
 import lock from "../../../public/images/lock.png";
 import headphones from "../../../public/images/headphones.png";
@@ -7,7 +7,7 @@ import tata from "../../../public/images/tataicon.svg";
 import airtel from "../../../public/images/airtelicon.svg";
 import dishtv from "../../../public/images/dishtvicon.svg";
 import sundirect from "../../../public/images/sundirecticon.svg";
-import gift from "../../../public/images/Gift.svg";
+import gift from "../../../public/images/gift.svg";
 import thumbsup from "../../../public/images/thumbsup.svg"
 import { ArrowRight } from "lucide-react";
 
