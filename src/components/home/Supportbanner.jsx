@@ -1,6 +1,6 @@
 import React from "react";
 
-import Headphoneicon from "../../../public/images/Headphones.png";
+import Headphoneicon from "../../../public/images/headphones.png";
 import Messageicon from "../../../public/images/textbox.png";
 import Mailicon from "../../../public/images/envelope.png";
 const SupportBanner = () => {
