@@ -3,8 +3,6 @@ import jio from "/images/jio.svg"
 import airtel from "/images/airtel.svg"
 import Vi from "../../../public/images/vi.svg";
 import Bsnl from "../../../public/images/bsnl.svg"
-import Frame_1 from "../../../public/images/Frame_1.png";
-import Frame_2 from "../../../public/images/Frame_2.png";
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
 import thunder from "../../../public/images/thunder.png";
@@ -503,16 +501,6 @@ export default function PrepaidRechargeSection() {
                                     className="w-[90px] h-auto object-contain"
                                 />
                             </div>
-                            <img
-                                src={Frame_1}
-                                alt="Frame_1"
-                                className="absolute top-[135px] right-1 h-[31px] max-w-[222px] h-auto object-contain z-10 drop-shadow-md"
-                            />
-                            <img
-                                src={Frame_2}
-                                alt="Frame_2"
-                                className="absolute top-[170px] right-1 h-[31px] max-w-[222px] h-auto object-contain z-10 drop-shadow-md"
-                            />
                         </div>
                     </div>
 
