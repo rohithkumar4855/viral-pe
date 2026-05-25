@@ -3,7 +3,7 @@ import { Search, Ticket, ShoppingBag, ChevronUp, ChevronDown, Check, Star, Shiel
 import Myntra from "/images/myntra.png"
 import StarBucks from "/images/starbucks.png"
 import Nike from "/images/nike.png"
-import Trends from "/images/Trends.svg"
+import Trends from "/images/trends.svg"
 import { useNavigate } from 'react-router-dom';
 
 export default function Vouchers() {
@@ -33,21 +33,21 @@ export default function Vouchers() {
         id: "instant-delivery",
         title: "Instant Code Delivery",
         description: "Get Vouchers In Seconds",
-        icon: '/images/Thunder.png',
+        icon: '/images/thunder.png',
         isRating: false,
     },
     {
         id: "customer-support",
         title: "24/7 Customer Support",
         description: "Help available round the clock",
-        icon: '/images/Headphones.png',
+        icon: '/images/headphones.png',
         isRating: false,
     },
     {
         id: "trusted-users",
         title: "Trusted By 1M+ Users",
         description: "4.8/5",
-        icon: '/images/Vector.svg',
+        icon: '/images/vector.svg',
         isRating: true,
     },
 ];
