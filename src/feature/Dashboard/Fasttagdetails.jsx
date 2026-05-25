@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MoreVertical } from 'lucide-react';
-import Axisicon from "../../../public/images/Axisbankicon.svg";
+import Axisicon from "../../../public/images/axisbankicon.svg";
 import Axis from "../../../public/images/axis.svg";
 import Bajaj from "../../../public/images/bajaj.svg";
 import icic from "../../../public/images/iciclogo.svg";
