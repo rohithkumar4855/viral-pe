@@ -2,9 +2,9 @@ import React from 'react';
 import { Gift, Share2, Copy, ShoppingCart, CreditCard, Ticket, Code, ChevronDown, MessageSquare, ChevronUp } from 'lucide-react';
 import headphones from "../../../public/images/earphones.svg"
 import Myntra from "../../../public/images/myntra.png";
-import Addproducticon from "../../../public/images/Addproducts.svg";
-import Cardicon from "../../../public/images/Cardicon.svg";
-import voucher from "../../../public/images/Voucher.svg";
+import Addproducticon from "../../../public/images/addproducts.svg";
+import Cardicon from "../../../public/images/cardicon.svg";
+import voucher from "../../../public/images/voucher.svg";
 import code from "../../../public/images/code.svg";
 
 // Define the steps data for the "How to Use?" section
