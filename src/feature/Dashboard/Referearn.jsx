@@ -1,10 +1,10 @@
 import React from 'react';
-import threepeople from "../../../public/images/Threepeople.svg"
-import twopeople from "../../../public/images/Twopeople.svg"
+import threepeople from "../../../public/images/threepeople.svg"
+import twopeople from "../../../public/images/twopeople.svg"
 import coins from "../../../public/images/coins.svg";
 import friendsicon from "../../../public/images/friends.svg";
-import refericon from "../../../public/images/Referlink.svg"
-import twocoinicon from "../../../public/images/Twocoins.svg";
+import refericon from "../../../public/images/referlink.svg"
+import twocoinicon from "../../../public/images/twocoins.svg";
 import { ArrowRight } from "lucide-react";
 
 import {
