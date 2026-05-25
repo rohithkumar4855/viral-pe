@@ -1,5 +1,5 @@
 import React from 'react';
-import mobileicon from "../../../public/images/Mobileicon.svg";
+import mobileicon from "../../../public/images/mobileicon.svg";
 import referopenbox from "/images/referopenbox.svg";
 
 // Added back the props so the close button and dynamic data work!
