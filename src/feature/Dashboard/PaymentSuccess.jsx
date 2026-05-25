@@ -1,6 +1,6 @@
 import React from "react";
 import { CheckCircle2 } from "lucide-react"; 
-import  Gift  from  "../../../public/images/Gift.svg"
+import  Gift  from  "../../../public/images/gift.svg"
 import success from "../../../public/images/success.svg";
 // import giftBox from "../../../public/images/giftbox.png"; 
 
