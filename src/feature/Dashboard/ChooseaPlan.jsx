@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import jio from "/images/jio.svg"
 import airtel from "/images/airtel.svg"
-import Vi from "../../../public/images/Vi.svg";
-import Bsnl from "../../../public/images/Bsnl.svg"
+import Vi from "../../../public/images/vi.svg";
+import Bsnl from "../../../public/images/bsnl.svg"
 import Frame_1 from "../../../public/images/Frame_1.png";
 import Frame_2 from "../../../public/images/Frame_2.png";
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
-import thunder from "../../../public/images/Thunder.png";
+import thunder from "../../../public/images/thunder.png";
 import wallet from "../../../public/images/wallet1.svg";
-import Greenthunder from "../../../public/images/Greenthunder.svg";
-import Greentick from "../../../public/images/GreenTick.svg";
-import discount from "../../../public/images/Discount.svg";
+import Greenthunder from "../../../public/images/greenthunder.svg";
+import Greentick from "../../../public/images/greenTick.svg";
+import discount from "../../../public/images/discount.svg";
 import lock from "../../../public/images/lock.png"
 import { ArrowRight } from "lucide-react";
 // Mock Data for Recharge Plans
