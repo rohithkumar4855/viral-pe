@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Container from "../../layout/Container";
 import { Search } from "lucide-react";
-import image from "../../../public/images/Owner.png";
+import image from "../../../public/images/owner.png";
 import image2 from "../../../public/images/owner2.png";
 import owner2 from "../../../public/images/owner-2.svg";
 import owner3 from "../../../public/images/owner-4.svg";
