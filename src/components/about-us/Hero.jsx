@@ -1,19 +1,19 @@
 import Container from "../../layout/Container";
-import thunder from "../../../public/images/Thunder.png";
-import Lock from "../../../public/images/lock.png";
-import Gift from "../../../public/images/gift.png";
+import thunder from "../../../public/images/thunder.png";
+import lock from "../../../public/images/lock.png";
+import gift from "../../../public/images/gift.png";
 import city from "../../../public/images/city.png";
 
 const features = [
   {
     id: 1,
     title: "100% Secure",
-    icon: Lock,
+    icon: lock,
   },
   {
     id: 2,
     title: "Rewards for you",
-    icon: Gift,
+    icon: gift,
   },
   {
     id: 3,
