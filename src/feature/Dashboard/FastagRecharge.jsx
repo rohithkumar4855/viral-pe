@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Search, Info, MessageSquare, MoreVertical, ArrowRight } from "lucide-react";
-import Axis from "../../../public/images/Axis.svg";
-import Bajaj from "../../../public/images/Bajaj.svg";
+import Axis from "../../../public/images/axis.svg";
+import Bajaj from "../../../public/images/bajaj.svg";
 import icic from "../../../public/images/iciclogo.svg";
 import idfc from "../../../public/images/idfclogo.svg";
-import Thunder from "../../../public/images/Thunder.png"
-import discount from "../../../public/images/Discount.svg"
+import Thunder from "../../../public/images/thunder.png"
+import discount from "../../../public/images/discount.svg"
 import Wallet from "../../../public/images/wallet.svg"
-import lock from "../../../public/images/Lock.png"
-import Gift from "../../../public/images/Gift.svg"
+import lock from "../../../public/images/lock.png"
+import Gift from "../../../public/images/gift.svg"
 import headphones from "../../../public/images/earphones.svg"
 
 // Mock Data for Banks List
