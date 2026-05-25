@@ -1,5 +1,5 @@
 import Container from "../../layout/Container";
-import Handsimage from "../../../public/images/Hands.png";
+import Handsimage from "../../../public/images/hands.png";
 
 export default function CashBackCard() {
   return (
@@ -24,7 +24,7 @@ export default function CashBackCard() {
         {/* Right Image Section */}
         <div className="w-full md:w-1/2 h-52 md:h-auto relative">
           <img 
-            src={Handsimage} 
+            src={handsimage} 
             alt="Hands stacked together" 
             className="w-full h-full object-cover"
           />
