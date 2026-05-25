@@ -1,14 +1,13 @@
 import React from 'react';
 import jio from "/images/jio.svg"
 import airtel from "/images/airtel.svg"
-import Thunder from "../../../public/images/Thunder.png"
-import discount from "../../../public/images/Discount.svg"
+import Thunder from "../../../public/images/thunder.png"
+import discount from "../../../public/images/discount.svg"
 import Wallet from "../../../public/images/wallet.svg"
-import lock from "../../../public/images/Lock.png"
-import Vi from "../../../public/images/Vi.svg";
-import Bsnl from "../../../public/images/Bsnl.svg"
-import Frame_1 from "../../../public/images/Frame_1.png";
-import Frame_2 from "../../../public/images/Frame_2.png";
+import lock from "../../../public/images/lock.png"
+import Vi from "../../../public/images/vi.svg";
+import Bsnl from "../../../public/images/bsnl.svg"
+
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
 import { Navigate } from 'react-router-dom';
@@ -28,21 +27,21 @@ const features = [
         id: "instant-delivery",
         title: "Instant Code Delivery",
         description: "Get Vouchers In Seconds",
-        icon: '/images/Thunder.png',
+        icon: '/images/thunder.png',
         isRating: false,
     },
     {
         id: "customer-support",
         title: "24/7 Customer Support",
         description: "Help available round the clock",
-        icon: '/images/Headphones.png',
+        icon: '/images/headphones.png',
         isRating: false,
     },
     {
         id: "trusted-users",
         title: "Trusted By 1M+ Users",
         description: "4.8/5",
-        icon: '/images/Vector.svg',
+        icon: '/images/vector.svg',
         isRating: true,
     },
 ];
