@@ -6,13 +6,13 @@ import TrustandSecure from "../components/about-us/TrustandSecureCard";
 
 export default function AboutUs() {
   return (
-    <>
+    <div className="flex flex-col gap-10">
       <Home />
       <VisionMission />
       <Ourvalues/>
       <CashBackCard/>
       <TrustandSecure/>
       
-    </>
+    </div>
   );
 }
