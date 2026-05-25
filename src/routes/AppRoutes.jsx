@@ -18,6 +18,7 @@ import Fastagdetails from "../feature/Dashboard/Fasttagdetails"
 import UserVouchers from "../feature/Dashboard/UserVouchers"
 import Vouchercode from "../feature/Dashboard/VoucherCode"
 import Wallet from "../feature/Dashboard/Wallet"
+import ComingSoon from "../components/Comingsoon";
 
 export default function AppRoutes() {
   return (
@@ -41,6 +42,7 @@ export default function AppRoutes() {
       <Route path="/my-vouchers" element={< UserVouchers  />} />
        <Route path="/voucher-code" element={< Vouchercode  />} />
       <Route path="/wallet" element={< Wallet  />} />
+      <Route path="/future" element={< ComingSoon/>} />
 
        
     </Routes>

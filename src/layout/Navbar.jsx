@@ -13,7 +13,10 @@ import {
 
 // --- Shared Imports ---
 import logo from "../../public/images/logo.png";
-
+import logouticon from "../../public/images/logout.svg"
+import profileicon from "../../public/images/profile.svg"
+import voucher from "../../public/images/vouchers.svg"
+import wallet from "../../public/images/wallet1.svg"
 // --- UserNavbar Specific Imports (SVGs) ---
 import vouchers from "../../public/images/vouchers.svg";
 import moneyreceiveSvg from "../../public/images/money-receive.svg";
@@ -22,7 +25,7 @@ import dthiconSvg from "../../public/images/dthicon.svg";
 import fastagiconSvg from "../../public/images/fasttag.svg";
 import refer from "../../public/images/refericon.svg";
 import transactions from "../../public/images/transcations.svg";
-
+import comingsoon from "../components/Comingsoon"
 
 // --- Public Navbar Specific Imports (PNGs) ---
 import MoneyReceivePng from "../../public/images/money-receive.png";
@@ -68,7 +71,7 @@ function UserNavbar({ user }) {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white z-50 shadow-sm font-sans">
 
-      <div className=" py-3 flex  items-center justify-between ">
+      <div className=" flex items-center justify-between h-[100px]  max-w-[1440px] w-full ">
 
         {/* Left Side: Logo & Dynamic Greeting */}
         <div className="flex  items-center pl-[105px]">
@@ -89,12 +92,12 @@ function UserNavbar({ user }) {
 
         {/* Center: Search Bar */}
         <div className=" md:flex flex flex-row  pr-[98px] ">
-          <div className="relative w-full gap-[16px]">
+          <div className="relative w-[385px] rounded-[12px] gap-[16px] mr-6">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 group-hover:text-gray-600 transition-colors" size={18} />
             <input
               type="text"
               placeholder="Search brands like Myntra, Nike..."
-              className="max-w-[385px] w-full max-h-[54px] bg-white border border-gray-200  hover:bg-white hover:border-gray-200 text-gray-700 rounded-[12px] py-[10px] pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-[#901c27]/20 focus:border-[#901c27] focus:bg-white "
+              className="max-w-[385px] w-full max-h-[54px] bg-white border border-gray-200  hover:bg-white  text-gray-700 rounded-[12px] py-[10px] pl-12 pr-4 focus:outline-none   focus:bg-white "
             />
           </div>
           <div className="flex items-center gap-4">
@@ -120,34 +123,50 @@ function UserNavbar({ user }) {
 
               {/* Dropdown Menu */}
               {isProfileOpen && (
-                <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-100 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-2 z-50 animate-fade-in">
+                <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-100 rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-2 z-50 animate-fade-in">
                   <div className="px-4 py-3 border-b border-gray-100 mb-1">
                     <p className="text-sm font-bold text-gray-800 truncate">{user?.name || "User"}</p>
                     <p className="text-xs text-gray-500 truncate mt-0.5">{user?.email || "No email provided"}</p>
                   </div>
 
-                  <div className="px-2">
+                  <div className="p-2 gap-3">
                     <button
                       onClick={() => { setIsProfileOpen(false); navigate("/dashboard"); }}
                       className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
                     >
-                      Profile
+
+                      <div className="flex flex-row gap-2">
+                        <img src={profileicon} />
+                        <h4 className="text-[12px]">Profile</h4>
+
+                      </div>
                     </button>
+                    <hr className=" border-gray-200 mx-4" />
                     <button
                       onClick={() => { setIsProfileOpen(false); navigate("/my-vouchers"); }}
                       className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
                     >
-                      My Vouchers
+                      <div className="flex flex-row gap-2">
+                        <img src={voucher} />
+                        <h4 className="text-[12px]">  My Vouchers</h4>
+
+                      </div>
                     </button>
+                    <hr className=" border-gray-200 mx-4" />
                     <button
                       onClick={() => { setIsProfileOpen(false); navigate("/wallet"); }}
                       className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
                     >
-                      My Wallet
+                      <div className="flex flex-row gap-2">
+                        <img src={wallet} />
+                        <h4 className="text-[12px]"> My Wallet</h4>
+
+                      </div>
                     </button>
+                    <hr className=" border-gray-200 mx-4" />
                   </div>
 
-                  <div className="h-[1px] w-full bg-gray-100 my-1"></div>
+                  <div className="h-[1px] w-full  my-1"></div>
 
                   <div className="px-2">
                     <button
@@ -157,9 +176,12 @@ function UserNavbar({ user }) {
                         window.dispatchEvent(new Event("authChange"));
                         navigate("/");
                       }}
-                      className="w-full text-left px-3 py-2.5 text-red-600 hover:bg-red-50 rounded-lg font-medium transition-all duration-200 cursor-pointer"
+                      className="w-full text-left px-3 py-2.5 text-[#C20505]  hover:bg-red-50 rounded-lg font-medium transition-all duration-200 cursor-pointer"
                     >
-                      Logout
+                      <div className="flex flex-row gap-2">
+                        <img src={logouticon} className="h-[]" />
+                        <h4 className="text-[12px]">Logout</h4>
+                      </div>
                     </button>
                   </div>
                 </div>
@@ -195,32 +217,34 @@ function UserNavbar({ user }) {
 
       {/* --- "ALL" SIDE CONTAINER OVERLAY MODAL --- */}
       {isAllMenuOpen && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[100] flex justify-start animate-fade-in">
-          <div className="w-full max-w-[360px] bg-white h-screen shadow-2xl p-6 flex flex-col justify-start relative overflow-y-auto">
-            <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-6">
-              <button onClick={() => setIsAllMenuOpen(false)} className="text-gray-500 hover:text-gray-800 hover:bg-gray-100 p-2 rounded-full transition-all duration-200">
-                <X size={22} />
-              </button>
-              <span className="text-[#800A1D] font-bold text-base border-b-2 border-[#800A1D] pb-1 px-1">All</span>
-            </div>
+        <div className="fixed inset-0 top-[160px] bg-black/20 z-[100] flex justify-start animate-fade-in">
+<div className="fixed left-0 top-[145px] w-[258px] h-[872px] bg-white shadow-2xl z-[100] overflow-y-auto">            
+            {/* Header / Close Area */}
+           
 
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col  gap-6">
+              {/* Recharge & Pay Bills Section */}
               <div>
-                <h3 className="text-[16px] font-semibold text-[#901c27] tracking-wider uppercase mb-3 px-3">Recharge & Pay Bills</h3>
-                <div className="flex flex-col gap-1">
+                <h3 className="text-[13px] font-bold text-[#901c27] tracking-wider uppercase mb-2 px-6">
+                  Recharge & Pay Bills
+                </h3>
+                <div className="flex flex-col">
                   {rechargeBillsGroup.map((service, i) => (
-                    <div key={i} onClick={() => { setIsAllMenuOpen(false); navigate(service.path); }} className="text-[15px] font-medium text-gray-700 hover:text-[#800A1D] hover:bg-[#FFEDEE] rounded-xl px-3 py-3 transition-all duration-200 cursor-pointer block">
+                    <div key={i} onClick={() => { setIsAllMenuOpen(false); navigate(service.path); }} className="text-[14px] font-medium text-gray-700 hover:text-[#800A1D]  px-6 py-2.5 transition-all duration-200 cursor-pointer block">
                       {service.name}
                     </div>
                   ))}
                 </div>
               </div>
 
+              {/* Finance & Payouts Section */}
               <div>
-                <h3 className="text-[16px] font-semibold text-[#901c27] tracking-wider uppercase mb-3 px-3">Finance & Payouts</h3>
-                <div className="flex flex-col gap-1">
+                <h3 className="text-[13px] font-bold text-[#901c27] tracking-wider uppercase mb-2 px-6">
+                  Finance & Payouts
+                </h3>
+                <div className="flex flex-col">
                   {financePayoutsGroup.map((service, i) => (
-                    <div key={i} onClick={() => { setIsAllMenuOpen(false); navigate(service.path); }} className="text-[15px] font-medium text-gray-700 hover:text-[#800A1D] hover:bg-[#FFEDEE] rounded-xl px-3 py-3 transition-all duration-200 cursor-pointer block">
+                    <div key={i} onClick={() => { setIsAllMenuOpen(false); navigate(service.path); }} className="text-[14px] font-medium text-gray-700 hover:text-[#800A1D] hover:bg-[#FFEDEE] px-6 py-2.5 transition-all duration-200 cursor-pointer block">
                       {service.name}
                     </div>
                   ))}
@@ -269,10 +293,10 @@ export default function Navbar() {
       title: "Recharge & Bills",
       icon: MoneyReceivePng,
       menu: [
-        { name: "Prepaid Recharge", icon: <img src={MoneyReceivePng} alt="Prepaid" className="w-5 h-5 object-contain" /> },
-        { name: "Post Paid Recharge", icon: <img src={MoneyReceivePng} alt="Postpaid" className="w-5 h-5 object-contain" /> },
-        { name: "DTH Recharge", icon: <img src={dthiconPng} alt="DTH" className="w-5 h-5 object-contain" /> },
-        { name: "FASTag", icon: <img src={fastagiconPng} alt="FASTag" className="w-[25.8px] h-[24.36px] object-contain" /> },
+        { name: "Prepaid Recharge", path: "/future", icon: <img src={MoneyReceivePng} alt="Prepaid" className="w-5 h-5 object-contain" /> },
+        { name: "Post Paid Recharge", path: "/future", icon: <img src={MoneyReceivePng} alt="Postpaid" className="w-5 h-5 object-contain" /> },
+        { name: "DTH Recharge", path: "/future", icon: <img src={dthiconPng} alt="DTH" className="w-5 h-5 object-contain" /> },
+        { name: "FASTag", path: "/future", icon: <img src={fastagiconPng} alt="FASTag" className="w-[25.8px] h-[24.36px] object-contain" /> },
       ],
     },
     {
@@ -281,27 +305,29 @@ export default function Navbar() {
       isMegaMenu: true,
       columns: [
         [
-          { name: "Prepaid Recharge", icon: <img src={MoneyReceivePng} alt="Prepaid" className="w-5 h-5 object-contain" /> },
-          { name: "Post Paid Recharge", icon: <img src={MoneyReceivePng} alt="Postpaid" className="w-5 h-5 object-contain" /> },
-          { name: "DTH Recharge", icon: <img src={dthiconPng} alt="DTH" className="w-5 h-5 object-contain" /> },
-          { name: "FASTag", icon: <img src={fastagiconPng} alt="FASTag" className="w-[25.8px] h-[24.36px] object-contain" /> },
+          { name: "Prepaid Recharge", path: "/future", icon: <img src={MoneyReceivePng} alt="Prepaid" className="w-5 h-5 object-contain" /> },
+          { name: "Post Paid Recharge", path: "/future", icon: <img src={MoneyReceivePng} alt="Postpaid" className="w-5 h-5 object-contain" /> },
+          { name: "DTH Recharge", path: "/future", icon: <img src={dthiconPng} alt="DTH" className="w-5 h-5 object-contain" /> },
+          { name: "FASTag", path: "/future", icon: <img src={fastagiconPng} alt="FASTag" className="w-[25.8px] h-[24.36px] object-contain" /> },
           { type: "header", name: "VOUCHERS" },
-          { name: "Gift Vouchers", icon: <img src={fastagiconPng} alt="Gift Vouchers" className="w-[25.8px] h-[24.36px] object-contain" /> },
+          { name: "Gift Vouchers", path: "/future", icon: <img src={fastagiconPng} alt="Gift Vouchers" className="w-[25.8px] h-[24.36px] object-contain" /> },
         ],
         [
           { type: "header", name: "BILL PAYMENTS" },
-          { name: "Electricity", icon: <img src={MoneyReceivePng} alt="Electricity" className="w-5 h-5 object-contain" /> },
-          { name: "Water", icon: <img src={MoneyReceivePng} alt="Water" className="w-5 h-5 object-contain" /> },
-          { name: "Broadband", icon: <img src={dthiconPng} alt="Broadband" className="w-5 h-5 object-contain" /> },
-          { name: "LPG Gas", icon: <img src={fastagiconPng} alt="LPG Gas" className="w-[25.8px] h-[24.36px] object-contain" /> },
-          { name: "Piped Gas", icon: <img src={fastagiconPng} alt="Piped Gas" className="w-[25.8px] h-[24.36px] object-contain" /> },
-          { name: "Insurance", icon: <img src={fastagiconPng} alt="Insurance" className="w-[25.8px] h-[24.36px] object-contain" /> },
-          { name: "Loan Payment", icon: <img src={fastagiconPng} alt="Loan Payment" className="w-[25.8px] h-[24.36px] object-contain" /> },
+          { name: "Electricity", path: "/future", icon: <img src={MoneyReceivePng} alt="Electricity" className="w-5 h-5 object-contain" /> },
+          { name: "Water", path: "/future", icon: <img src={MoneyReceivePng} alt="Water" className="w-5 h-5 object-contain" /> },
+          { name: "Broadband", path: "/future", icon: <img src={dthiconPng} alt="Broadband" className="w-5 h-5 object-contain" /> },
+          { name: "LPG Gas", path: "/future", icon: <img src={fastagiconPng} alt="LPG Gas" className="w-[25.8px] h-[24.36px] object-contain" /> },
+          { name: "Piped Gas", path: "/future", icon: <img src={fastagiconPng} alt="Piped Gas" className="w-[25.8px] h-[24.36px] object-contain" /> },
+          { name: "Insurance", path: "/future", icon: <img src={fastagiconPng} alt="Insurance" className="w-[25.8px] h-[24.36px] object-contain" /> },
+          { name: "Loan Payment", path: "/future", icon: <img src={fastagiconPng} alt="Loan Payment" className="w-[25.8px] h-[24.36px] object-contain" /> },
         ]
       ]
     },
-    { title: "Referral" },
     {
+      title: "Referral",
+      path: "/future"
+    }, {
       title: "Company",
       menu: [
         { name: "About Us", icon: <img src={MoneyReceivePng} alt="Prepaid" className="w-5 h-5 object-contain" /> },
@@ -314,14 +340,14 @@ export default function Navbar() {
     {
       title: "Vendors",
       menu: [
-        { name: "Retail", hasArrow: true },
-        { name: "Health Care", hasArrow: true },
-        { name: "Transportation & Logistics", hasArrow: true },
-        { name: "Professional Services", hasArrow: true },
-        { name: "Food & Beverages", hasArrow: true },
-        { name: "Financial Services", hasArrow: true },
-        { name: "Entertainment& Lifestyle", hasArrow: true },
-        { name: "Education", hasArrow: true },
+        { name: "Retail", hasArrow: true, path: "/future" },
+        { name: "Health Care", hasArrow: true, path: "/future" },
+        { name: "Transportation & Logistics", hasArrow: true, path: "/future" },
+        { name: "Professional Services", hasArrow: true, path: "/future" },
+        { name: "Food & Beverages", hasArrow: true, path: "/future" },
+        { name: "Financial Services", hasArrow: true, path: "/future" },
+        { name: "Entertainment & Lifestyle", hasArrow: true, path: "/future" },
+        { name: "Education", hasArrow: true, path: "/future" },
       ]
     },
   ];
@@ -342,7 +368,12 @@ export default function Navbar() {
             <div key={index} className="relative flex flex-col items-center" onMouseEnter={() => setOpenDropdown(index)} onMouseLeave={() => setOpenDropdown(null)}>
 
               {/* Main Nav Items with Hover Background */}
-              <div className="flex flex-col items-center cursor-pointer py-2 px-4 rounded-xl  transition-all duration-200 mt-2">
+              <div className="flex flex-col items-center cursor-pointer py-2 px-4 rounded-xl  transition-all duration-200 mt-2"
+                onClick={() => {
+                  if (item.path) {
+                    navigate(item.path);
+                  }
+                }}>
                 <div className=" flex items-center gap-[6px] text-[18px] text-(--primary-red) font-medium">
                   {item.title}
                   {(item.menu || item.isMegaMenu) && (
@@ -355,19 +386,33 @@ export default function Navbar() {
               {openDropdown === index && (
                 <>
                   {item.menu && !item.isMegaMenu && (
-                    <div className="absolute top-[85%] left-1/2 -translate-x-1/2 mt-3 min-w-[260px] bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-2 z-50">
+                    <div className="absolute top-[100%] left-1/2 -translate-x-1/2 mt-3 min-w-[260px] bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-2 z-50 before:content-[''] before:absolute before:-top-6 before:left-0 before:w-full before:h-6 before:bg-transparent">
                       <div className="absolute -top-[8px] left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 rounded-sm shadow-[-4px_-4px_10px_rgb(0,0,0,0.04)]"></div>
 
                       <div className="relative z-10 bg-white flex flex-col gap-1">
                         {item.menu.map((menuItem, i) => {
                           const isObject = typeof menuItem === "object";
                           return (
-                            <div key={i} onClick={() => {
-                              if (isObject) {
-                                if (["About Us", "Contact Us"].includes(menuItem.name.trim())) { navigate("/about-us"); setOpenDropdown(null); }
-                                if (menuItem.name.trim() === "Management") { navigate("/management"); setOpenDropdown(null); }
-                              }
-                            }} className="flex items-center justify-between px-4 py-3 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-xl cursor-pointer transition-all duration-200 group">
+                            <div
+                              key={i}
+                              onClick={() => {
+                                if (menuItem.path) {
+                                  navigate(menuItem.path);
+                                  setOpenDropdown(null);
+                                  return;
+                                }
+
+                                if (["About Us", "Contact Us"].includes(menuItem.name?.trim())) {
+                                  navigate("/about-us");
+                                  setOpenDropdown(null);
+                                }
+
+                                if (menuItem.name?.trim() === "Management") {
+                                  navigate("/management");
+                                  setOpenDropdown(null);
+                                }
+                              }}
+                              className="flex items-center justify-between px-4 py-3 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-xl cursor-pointer transition-all duration-200 group">
                               <div className="flex items-center gap-4">
                                 {isObject && menuItem.icon && (
                                   <div className="w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-white transition-colors">
@@ -389,7 +434,7 @@ export default function Navbar() {
                   )}
 
                   {item.isMegaMenu && (
-                    <div className="absolute top-[100%] left-1/2 -translate-x-1/2 mt-2 min-w-[600px] bg-white rounded-3xl shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-50 border border-gray-100 overflow-visible animate-fade-in">
+                    <div className="absolute top-[100%] left-1/2 -translate-x-1/2 mt-2 min-w-[600px] bg-white rounded-3xl shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-50 border border-gray-100 overflow-visible animate-fade-in before:content-[''] before:absolute before:-top-6 before:left-0 before:w-full before:h-6 before:bg-transparent">
 
                       {/* Top Arrow */}
                       <div className="absolute -top-[8px] left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 rounded-sm shadow-[-4px_-4px_10px_rgb(0,0,0,0.04)] z-10"></div>
@@ -402,9 +447,23 @@ export default function Navbar() {
                             {col.map((link, i) => link.type === "header" ? (
                               <h4 key={i} className={`text-[11px] font-extrabold text-gray-400 uppercase tracking-widest mb-3 px-3 ${i !== 0 ? "mt-8" : ""}`}>{link.name}</h4>
                             ) : (
-                              <div key={i} className="flex items-center gap-3 py-2.5 px-3 hover:bg-[#FFEDEE] cursor-pointer transition-all duration-200 rounded-xl group">
-                                <div className="flex items-center justify-center w-8 h-8 rounded-lg group-hover:bg-white transition-colors">{link.icon}</div>
-                                <span className="text-gray-700 font-semibold text-[14.5px] group-hover:text-[#901c27] transition-colors">{link.name}</span>
+                              <div
+                                key={i}
+                                onClick={() => {
+                                  if (link.path) {
+                                    navigate(link.path);
+                                    setOpenDropdown(null);
+                                  }
+                                }}
+                                className="flex items-center gap-3 py-2.5 px-3 hover:bg-[#FFEDEE] cursor-pointer transition-all duration-200 rounded-xl group"
+                              >
+                                <div className="flex items-center justify-center w-8 h-8 rounded-lg group-hover:bg-white transition-colors">
+                                  {link.icon}
+                                </div>
+
+                                <span className="text-gray-700 font-semibold text-[14.5px] group-hover:text-[#901c27] transition-colors">
+                                  {link.name}
+                                </span>
                               </div>
                             ))}
                           </div>
