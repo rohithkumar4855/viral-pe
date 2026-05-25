@@ -20,7 +20,7 @@ export const earningsData = [
   },
   {
     id: 4,
-    icon: "/images/Overlay.png",
+    icon: "/images/overlay.png",
     title: "Total Referral Bonus",
     amount: "₹ 25,000.00",
   },
