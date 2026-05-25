@@ -1,9 +1,9 @@
 import Container from "../../layout/Container";
 import verified from "../../../public/images/verified1.png"
 import people from "../../../public/images/people.png"
-import Gift from "../../../public/images/Gift1.png"
-import Bulb from  "../../../public/images/Bulb.png"
-import shakehands from "../../../public/images/Shakehands.png"
+import Gift from "../../../public/images/gift1.png"
+import Bulb from  "../../../public/images/bulb.png"
+import shakehands from "../../../public/images/shakehands.png"
 import Threepeople from "../../../public/images/threepeople.png"
 const cardsData = [
   {
