@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { MoreVertical } from 'lucide-react';
 import Axisicon from "../../../public/images/Axisbankicon.svg";
-import Axis from "../../../public/images/Axis.svg";
-import Bajaj from "../../../public/images/Bajaj.svg";
+import Axis from "../../../public/images/axis.svg";
+import Bajaj from "../../../public/images/bajaj.svg";
 import icic from "../../../public/images/iciclogo.svg";
 import idfc from "../../../public/images/idfclogo.svg";
 import { ArrowRight } from 'lucide-react';
-import discount from "../../../public/images/Discount.svg"
+import discount from "../../../public/images/discount.svg"
 import Wallet from "../../../public/images/wallet.svg"
-import lock from "../../../public/images/Lock.png"
-import Gift from "../../../public/images/Gift.svg"
+import lock from "../../../public/images/lock.png"
+import Gift from "../../../public/images/gift.svg"
 import headphones from "../../../public/images/earphones.svg"
-import Thunder from "../../../public/images/Thunder.png"
-import greentick from "../../../public/images/GreenTick.svg"
-import greenthunder from "../../../public/images/Greenthunder.svg"
+import Thunder from "../../../public/images/thunder.png"
+import greentick from "../../../public/images/greenTick.svg"
+import greenthunder from "../../../public/images/greenthunder.svg"
 
 const FastagRechargeUI = () => {
   const [selectedAmount, setSelectedAmount] = useState('300');
