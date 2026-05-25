@@ -6,8 +6,8 @@ import headphones from "../../../public/images/earphones.svg";
 import Myntra from "../../../public/images/myntra.png"
 import StarBucks from "/images/starbucks.png"
 import Nike from "/images/nike.png"
-import Trends from "/images/Trends.svg"
-import ticketicon from "/images/Ticketicon.svg"
+import Trends from "/images/trends.svg"
+import ticketicon from "/images/ticketicon.svg"
 import { useNavigate } from 'react-router-dom';
 
 
