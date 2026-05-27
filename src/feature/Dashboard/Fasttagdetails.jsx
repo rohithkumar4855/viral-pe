@@ -72,7 +72,7 @@ const FastagRechargeUI = () => {
     { title: 'Secure Payments', desc: '256-bit SSL encrypted transactions', icon: lock },
   ];
   return (
-    <div className="max-w-[1217px]  pt-15 mx-auto  flex flex-col lg:flex-row gap-3  items-start">
+    <div className="max-w-[1217px]  pt-15 mx-auto  flex flex-col lg:flex-row gap-2  items-start">
 
       {/* --- NEW FASTAG RECHARGE BOX (LEFT COLUMN) --- */}
       <div className='flex flex-col gap-6 w-full'>
