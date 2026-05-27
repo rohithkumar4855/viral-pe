@@ -7,7 +7,7 @@ import icic from "../../../public/images/iciclogo.svg";
 import idfc from "../../../public/images/idfclogo.svg";
 import { ArrowRight } from 'lucide-react';
 import discount from "../../../public/images/discount.svg"
-import Wallet from "../../../public/images/wallet.svg"
+import Wallet from "../../../public/images/wallet2.svg"
 import lock from "../../../public/images/lock.png"
 import Gift from "../../../public/images/gift.svg"
 import headphones from "../../../public/images/earphones.svg"
@@ -72,11 +72,11 @@ const FastagRechargeUI = () => {
     { title: 'Secure Payments', desc: '256-bit SSL encrypted transactions', icon: lock },
   ];
   return (
-    <div className="max-w-[1217px] mx-auto  px-4 flex flex-col lg:flex-row gap-6 justify-between items-start">
+    <div className="max-w-[1217px]  pt-10 mx-auto  flex flex-col lg:flex-row gap-3  items-start">
 
       {/* --- NEW FASTAG RECHARGE BOX (LEFT COLUMN) --- */}
-      <div className='flex flex-col gap-6 w-full lg:max-w-[837px]'>
-        <div className="w-full bg-white rounded-3xl p-8 shadow-sm font-sans flex flex-col justify-between box-border">
+      <div className='flex flex-col gap-6 w-full'>
+        < div className=" max-w-[837px] max-h-[366px] bg-white rounded-3xl p-4 shadow-sm font-sans flex flex-col justify-between box-border">
 
           {/* Top Section: Account Details */}
           <div>
@@ -112,7 +112,7 @@ const FastagRechargeUI = () => {
           </div>
 
           {/* Bottom Section: Recharge Amount & Scrollable Cards */}
-          <div className="mt-8">
+          <div className="mt-5">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
               <div className="flex items-center relative w-fit">
                 <h2 className="text-[22px] font-bold text-gray-900 tracking-tight pr-6">Select Recharge Amount</h2>
@@ -158,7 +158,7 @@ const FastagRechargeUI = () => {
 
         </div>
 
-        <div className="bg-white w-full p-6 rounded-2xl shadow-sm border border-gray-100 shrink-0">
+        <div className="bg-white w-[837px] h-[226px] p-6 rounded-2xl shadow-sm border border-gray-100 shrink-0">
           <h2 className="text-[20px] font-bold text-gray-900 mb-5">Recent Recharges</h2>
 
           <div className="flex gap-4 overflow-x-auto pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
@@ -186,7 +186,7 @@ const FastagRechargeUI = () => {
           </div>
         </div>
 
-        <div className="bg-white w-full p-6 rounded-2xl shadow-sm border border-gray-100 shrink-0">
+        <div className="bg-white w-[837px] h-[231px] p-6 rounded-2xl shadow-sm border border-gray-100 shrink-0">
           <div className="flex justify-between items-center mb-5">
             <h2 className="text-[20px] font-bold text-gray-900">All FASTag Issuers</h2>
             <button className="text-[#8C1822] text-[13px] font-bold flex items-center gap-1 hover:underline cursor-pointer">
@@ -216,7 +216,7 @@ const FastagRechargeUI = () => {
 
       {/* --- RIGHT COLUMN --- */}
       <div className='flex flex-col gap-4'>
-        <div className="w-[348px] shrink-0 mx-auto lg:mx-0 h-[604px] rounded-[16.69px]  bg-white p-6 flex flex-col font-sans box-border relative shadow-sm">
+        <div className="w-[348px] shrink-0 mx-auto  h-[604px] rounded-[16.69px]  bg-white p-4 flex flex-col font-sans box-border relative shadow-sm">
           <h2 className="text-[22px] font-bold text-gray-900 mb-6 tracking-tight">
             Recharge Details
           </h2>
@@ -241,7 +241,7 @@ const FastagRechargeUI = () => {
             </button>
           </div>
 
-          <hr className="border-gray-200 mb-4" />
+          <hr className="border-gray-200 mb-2" />
 
           {/* Amounts */}
           <div className="flex justify-between items-center mb-3 mt-1">
@@ -347,7 +347,7 @@ const FastagRechargeUI = () => {
           </div>
 
           {/* Pay Button */}
-          <button className="w-full bg-[#861d33] hover:bg-[#6c1729] text-white font-semibold py-3.5 rounded-[10px] text-[16px] mb-auto transition-colors">
+          <button className="w-[293px] h-[44px] bg-[#861d33] hover:bg-[#6c1729] text-white font-semibold py-3.5 rounded-[10px] text-[16px] mb-auto transition-colors">
             Pay ₹{finalPayable.toFixed(2)}
           </button>
 
