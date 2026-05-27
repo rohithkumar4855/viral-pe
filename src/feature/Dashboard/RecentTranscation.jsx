@@ -48,7 +48,7 @@ const RecentTransactions = ({ transactions }) => (
 
 const ReferAndEarn = ({ data }) => {
   return (
-    <div className="bg-[linear-gradient(90.93deg,_#1F0608_2.81%,_#911922_77.88%)] rounded-xl p-6 max-w-[417px] text-white shadow-md">
+    <div className="bg-[linear-gradient(90.93deg,_#1F0608_2.81%,_#911922_77.88%)] rounded-xl p-6 max-w-[417px] max-h-[249px] text-white shadow-md">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-[24px] font-semibold">Refer & Earn</h2>

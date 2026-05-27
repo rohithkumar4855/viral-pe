@@ -1,8 +1,8 @@
 import React from "react";
 import thunder from "../../../public/images/thunder.png";
-import wallet from "../../../public/images/wallet.svg";
-import lock from "../../../public/images/lock.png";
-import headphones from "../../../public/images/headphones.png";
+import wallet from "../../../public/images/wallet2.svg";
+import lock from "../../../public/images/lock.svg";
+import headphones from "../../../public/images/headphone.svg";
 import tata from "../../../public/images/tataicon.svg";
 import airtel from "../../../public/images/airtelicon.svg";
 import dishtv from "../../../public/images/dishtvicon.svg";
@@ -11,7 +11,7 @@ import gift from "../../../public/images/gift.svg";
 import thumbsup from "../../../public/images/thumbsup.svg"
 import { ArrowRight } from "lucide-react";
 
-
+import FeatureBanner from "./FeatureBanner";
 export default function DthRechargeDashboard() {
     const whyRechargeFeatures = [
         {
@@ -74,7 +74,7 @@ export default function DthRechargeDashboard() {
     ];
 
     return (
-        <div className="mt-20 bg-[#FCF8F8] py-10 flex flex-col items-center justify-start text-[#1A1A1A] font-sans antialiased">
+        <div className="mt-20  flex flex-col items-center justify-start text-[#1A1A1A] font-sans antialiased">
             <div className="w-[1217px] flex flex-col gap-6">
 
                 {/* TOP SECTION: Main Form & Why Recharge Side Widget */}
@@ -103,7 +103,7 @@ export default function DthRechargeDashboard() {
                     </div>
 
                     {/* Right: Why Recharge On ViralPe */}
-                    <div className="col-span-4 bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col justify-between h-[260px]">
+                    <div className=" w-[348px] bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col justify-between h-[260px]">
                         <h3 className="text-base font-bold text-gray-900 mb-2">
                             Why Recharge On ViralPe?
                         </h3>
@@ -244,51 +244,7 @@ export default function DthRechargeDashboard() {
                     </div>
                 </div>
 
-                {/* FOOTER TRUST BADGES */}
-                <div className="bg-[#FFF2F4] rounded-2xl py-6 px-10 flex items-center justify-between border border-[#FFE1E5] mt-2">
-                    <div className="flex items-center gap-3">
-                        <div className="text-[#800A1D] bg-white p-2 rounded-lg shadow-sm">
-                            <img src={lock} />
-                        </div>
-                        <div>
-                            <h5 className="text-xs font-bold text-gray-900">100% Secure Payments</h5>
-                            <p className="text-[10px] text-gray-400 font-medium">256-bit SSL Encrypted</p>
-                        </div>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                        <div className="text-[#800A1D] bg-white p-2 rounded-lg shadow-sm">
-                            <img src={thumbsup} />
-                        </div>
-                        <div>
-                            <h5 className="text-xs font-bold text-gray-900">Instant Activation</h5>
-                            <p className="text-[10px] text-gray-400 font-medium">Get Activation In Seconds</p>
-                        </div>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                        <div className="text-[#800A1D] bg-white p-2 rounded-lg shadow-sm">
-                            <img src={headphones} />
-                        </div>
-                        <div>
-                            <h5 className="text-xs font-bold text-gray-900">24/7 Customer Support</h5>
-                            <p className="text-[10px] text-gray-400 font-medium">Help available round the clock</p>
-                        </div>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                        <div className="text-[#800A1D] bg-white p-2 rounded-lg shadow-sm">
-                            <img src={thumbsup} />
-                        </div>
-                        <div>
-                            <h5 className="text-xs font-bold text-gray-900">Trusted By 1M+ Users</h5>
-                            <div className="flex items-center gap-0.5 mt-0.5">
-                                <span className="text-yellow-500 text-[10px]">★★★★★</span>
-                                <span className="text-[9px] text-gray-500 font-bold ml-1">4.8/5</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               <FeatureBanner/>
 
             </div>
         </div>

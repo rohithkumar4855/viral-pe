@@ -1,10 +1,10 @@
 import React from 'react';
 import jio from "/images/jio.svg"
 import airtel from "/images/airtel.svg"
-import Thunder from "../../../public/images/thunder.png"
+import Thunder from "../../../public/images/thunder.svg"
 import discount from "../../../public/images/discount.svg"
-import Wallet from "../../../public/images/wallet.svg"
-import lock from "../../../public/images/lock.png"
+import Wallet from "../../../public/images/wallet2.svg"
+import lock from "../../../public/images/lock.svg"
 import Vi from "../../../public/images/vi.svg";
 import Bsnl from "../../../public/images/bsnl.svg"
 
@@ -12,7 +12,7 @@ import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-
+import FeatureBanner from './FeatureBanner';
 
 
 const features = [
@@ -20,21 +20,21 @@ const features = [
         id: "secure-payments",
         title: "100% Secure Payments",
         description: "256-bit SSL Encrypted",
-        icon: '/images/lock.png',
+        icon: '/images/lock.svg',
         isRating: false,
     },
     {
         id: "instant-delivery",
         title: "Instant Code Delivery",
         description: "Get Vouchers In Seconds",
-        icon: '/images/thunder.png',
+        icon: '/images/thunder.svg',
         isRating: false,
     },
     {
         id: "customer-support",
         title: "24/7 Customer Support",
         description: "Help available round the clock",
-        icon: '/images/headphones.png',
+        icon: '/images/headphone.svg',
         isRating: false,
     },
     {
@@ -107,9 +107,10 @@ export default function RechargeDashboard() {
                             </button>
                         </div>
 
-                        <div className="bg-white max-w-[348px] w-full max-h-[278px] p-4 rounded-[13.78px] shadow-sm border border-slate-100">
-                            <h3 className="text-lg font-bold mb-4">Why Recharge On ViralPe?</h3>
-                            <div className="space-y-4">
+                        <div className="bg-white  max-w-[348px] w-full max-h-[278px] p-4 rounded-[13.78px] shadow-sm border border-slate-100">
+                            <div className="gap-3 pl-5 space-y-3 ">
+                                <h3 className="text-lg font-bold mb-4">Why Recharge On ViralPe?</h3>
+
                                 {ReachargeOn.map((item, idx) => (
                                     <div key={idx} className="flex items-start gap-3">
                                         <div className="w-8 h-8 rounded-lg bg-rose-50 flex items-center justify-center flex-shrink-0">
@@ -241,45 +242,8 @@ export default function RechargeDashboard() {
 
                     </div>
                     {/* Updated to max-w-[1210px] with left-alignment fixes */}
-                    <div className="max-w-[1210px] w-full max-h-[118px]  rounded-[20px]  bg-[#FFEDEE] py-6 px-4 lg:px-6">
-                        <div className="flex flex-row justify-between gap-5 w-full">
-                            {features.map((feature) => (
-                                <div key={feature.id} className="flex items-center gap-4">
-                                    {/* Icon Box */}
-                                    <div className="flex h-[47px] w-[47px] flex-shrink-0 items-center justify-center rounded-[18px] bg-white text-[#8C1822] shadow-sm">
-                                        {renderIcon(feature.icon)}
-                                    </div>
-
-                                    {/* Text */}
-                                    <div className="flex flex-col justify-center">
-                                        <h3 className="text-[16px] font-semibold text-[#901c27]">
-                                            {feature.title}
-                                        </h3>
-
-                                        {feature.isRating ? (
-                                            <div className="mt-1 flex items-center gap-1">
-                                                {[...Array(5)].map((_, index) => (
-                                                    <svg
-                                                        key={index}
-                                                        className="h-4 w-4 fill-current text-yellow-400"
-                                                        viewBox="0 0 24 24"
-                                                    >
-                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                                    </svg>
-                                                ))}
-                                                <span className="ml-1 text-[14px] text-[#1C1B1BCC]">
-                                                    {feature.description}
-                                                </span>
-                                            </div>
-                                        ) : (
-                                            <p className="mt-1 text-sm">
-                                                {feature.description}
-                                            </p>
-                                        )}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                    <div>
+                        <FeatureBanner />
                     </div>
                 </div>
 

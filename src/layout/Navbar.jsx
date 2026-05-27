@@ -13,10 +13,11 @@ import {
 
 // --- Shared Imports ---
 import logo from "../../public/images/logo.png";
-import logouticon from "../../public/images/logout.svg"
-import profileicon from "../../public/images/profile.svg"
-import voucher from "../../public/images/vouchers.svg"
-import wallet from "../../public/images/wallet1.svg"
+import logouticon from "../../public/images/logout.svg";
+import profileicon from "../../public/images/profile.svg";
+import voucher from "../../public/images/vouchers.svg";
+import wallet from "../../public/images/wallet1.svg";
+
 // --- UserNavbar Specific Imports (SVGs) ---
 import vouchers from "../../public/images/vouchers.svg";
 import moneyreceiveSvg from "../../public/images/money-receive.svg";
@@ -25,7 +26,8 @@ import dthiconSvg from "../../public/images/dthicon.svg";
 import fastagiconSvg from "../../public/images/fasttag.svg";
 import refer from "../../public/images/refericon.svg";
 import transactions from "../../public/images/transcations.svg";
-import comingsoon from "../components/Comingsoon"
+import comingsoon from "../components/Comingsoon";
+import home from "/images/home.svg";
 
 // --- Public Navbar Specific Imports (PNGs) ---
 import MoneyReceivePng from "../../public/images/money-receive.png";
@@ -42,13 +44,14 @@ function UserNavbar({ user }) {
 
   const secondaryNavItems = [
     { name: "All", icon: <Menu size={18} />, path: "/all-services" },
+    { name: "DashBoard", icon: <img src={home} alt="Home" />, path: "/dashboard" },
     { name: "Vouchers", icon: <img src={vouchers} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/Vouchers" },
-    { name: "Prepaid Recharge", icon: <img src={moneyreceiveSvg} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/prepaid" },
-    { name: "Postpaid Recharge", icon: <img src={moneysend} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/prepaid" },
-    { name: "DTH Recharge", icon: <img src={dthiconSvg} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/dth" },
-    { name: "FASTag Recharge", icon: <img src={fastagiconSvg} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/fastag" },
-    { name: "Refer & Earn", icon: <img src={refer} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/refer-and-earn" },
-    { name: "Transactions", icon: <img src={transactions} alt="Vouchers" className="w-5 h-5 object-contain" />, path: "/transactions" },
+    { name: "Prepaid Recharge", icon: <img src={moneyreceiveSvg} alt="Prepaid" className="w-5 h-5 object-contain" />, path: "/prepaid" },
+    { name: "Postpaid Recharge", icon: <img src={moneysend} alt="Postpaid" className="w-5 h-5 object-contain" />, path: "/prepaid" },
+    { name: "DTH Recharge", icon: <img src={dthiconSvg} alt="DTH" className="w-5 h-5 object-contain" />, path: "/dth" },
+    { name: "FASTag Recharge", icon: <img src={fastagiconSvg} alt="FASTag" className="w-5 h-5 object-contain" />, path: "/fastag" },
+    { name: "Refer & Earn", icon: <img src={refer} alt="Refer" className="w-5 h-5 object-contain" />, path: "/refer-and-earn" },
+    { name: "Transactions", icon: <img src={transactions} alt="Transactions" className="w-5 h-5 object-contain" />, path: "/transactions" },
   ];
 
   const rechargeBillsGroup = [
@@ -70,52 +73,57 @@ function UserNavbar({ user }) {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white z-50 shadow-sm font-sans">
-
-      <div className=" flex items-center justify-between h-[100px]  max-w-[1440px] w-full ">
-
+      <div className="flex items-center justify-between h-[80px] md:h-[100px] max-w-[1440px] w-full mx-auto px-4 sm:px-6 md:px-10 lg:px-[105px]">
+        
         {/* Left Side: Logo & Dynamic Greeting */}
-        <div className="flex  items-center pl-[105px]">
-
-          <div className="cursor-pointer" onClick={() => navigate("/dashboard")}>
-            <img src={logo} alt="logo" className="w-[78px] h-[78px] object-contain" />
+        <div className="flex items-center gap-3 lg:gap-6">
+          <div className="cursor-pointer flex-shrink-0" onClick={() => navigate("/dashboard")}>
+            <img src={logo} alt="logo" className="w-[60px] h-[60px] md:w-[78px] md:h-[78px] object-contain" />
           </div>
           <div className="hidden md:flex flex-col cursor-default">
-            <h1 className="text-gray-900 text-[18px] font-semibold">
+            <h1 className="text-gray-900 text-[16px] lg:text-[18px] font-semibold">
               Hello, {firstName}
             </h1>
-            <div className="flex items-center text-gray-500 text-[14px] mt-1">
+            <div className="flex items-center text-gray-500 text-[12px] lg:text-[14px] mt-1">
               <MapPin size={14} className="text-[#901c27] mr-1" />
               <span>500000</span>
             </div>
           </div>
         </div>
 
-        {/* Center: Search Bar */}
-        <div className=" md:flex flex flex-row  pr-[98px] ">
-          <div className="relative w-[385px] rounded-[12px] gap-[16px] mr-6">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 group-hover:text-gray-600 transition-colors" size={18} />
+        {/* Center/Right: Search Bar & Actions */}
+        <div className="flex flex-row items-center gap-3 lg:gap-6 flex-1 justify-end">
+          
+          <div className="relative hidden sm:flex flex-1 max-w-[280px] lg:max-w-[385px] rounded-[12px]">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 transition-colors" size={18} />
             <input
               type="text"
-              placeholder="Search brands like Myntra, Nike..."
-              className="max-w-[385px] w-full max-h-[54px] bg-white border border-gray-200  hover:bg-white  text-gray-700 rounded-[12px] py-[10px] pl-12 pr-4 focus:outline-none   focus:bg-white "
+              placeholder="Search brands like Myntra..."
+              className="w-full max-h-[45px] lg:max-h-[54px] bg-white border border-gray-200 text-gray-700 rounded-[12px] py-[8px] lg:py-[10px] pl-12 pr-4 focus:outline-none focus:border-[#901c27]"
             />
           </div>
-          <div className="flex items-center gap-4">
-            <button className="text-gray-500 hover:text-[#901c27] hover:bg-[#FFEDEE] p-2.5 rounded-full transition-all duration-200 cursor-pointer">
-              <Bell size={22} />
+
+          <div className="flex items-center gap-2 lg:gap-4 flex-shrink-0">
+            {/* Mobile Search Icon (Shows only on mobile) */}
+            <button className="sm:hidden text-gray-500 hover:text-[#901c27] hover:bg-[#FFEDEE] p-2 rounded-full transition-all duration-200">
+              <Search size={22} />
+            </button>
+
+            <button className="text-gray-500 hover:text-[#901c27] hover:bg-[#FFEDEE] p-2 md:p-2.5 rounded-full transition-all duration-200 cursor-pointer">
+              <Bell size={20} className="md:w-[22px] md:h-[22px]" />
             </button>
 
             {/* Profile Dropdown */}
             <div className="relative">
               <div
-                className="flex items-center gap-2 cursor-pointer  p-1.5 pr-3 rounded-xl transition-all duration-200"
+                className="flex items-center gap-1 md:gap-2 cursor-pointer p-1 lg:p-1.5 lg:pr-3 rounded-xl transition-all duration-200"
                 onClick={() => setIsProfileOpen(!isProfileOpen)}
               >
-                <div className="bg-[#901c27] w-[40px] h-[40px] rounded-[8px] flex items-center justify-center overflow-hidden shadow-sm">
+                <div className="bg-[#901c27] w-[35px] h-[35px] md:w-[40px] md:h-[40px] rounded-[8px] flex items-center justify-center overflow-hidden shadow-sm">
                   {user?.photo ? (
                     <img src={user.photo} alt="Profile" className="w-full h-full object-cover" />
                   ) : (
-                    <h1 className="text-white text-[18px] font-medium">{initial}</h1>
+                    <h1 className="text-white text-[16px] md:text-[18px] font-medium">{initial}</h1>
                   )}
                 </div>
                 <ChevronDown size={16} className={`text-gray-500 transition-transform duration-200 ${isProfileOpen ? "rotate-180" : ""}`} />
@@ -134,39 +142,34 @@ function UserNavbar({ user }) {
                       onClick={() => { setIsProfileOpen(false); navigate("/dashboard"); }}
                       className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
                     >
-
-                      <div className="flex flex-row gap-2">
-                        <img src={profileicon} />
+                      <div className="flex flex-row items-center gap-2">
+                        <img src={profileicon} alt="Profile" className="w-4 h-4" />
                         <h4 className="text-[12px]">Profile</h4>
-
                       </div>
                     </button>
-                    <hr className=" border-gray-200 mx-4" />
+                    <hr className="border-gray-200 mx-4 my-1" />
                     <button
                       onClick={() => { setIsProfileOpen(false); navigate("/my-vouchers"); }}
                       className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
                     >
-                      <div className="flex flex-row gap-2">
-                        <img src={voucher} />
-                        <h4 className="text-[12px]">  My Vouchers</h4>
-
+                      <div className="flex flex-row items-center gap-2">
+                        <img src={voucher} alt="Voucher" className="w-4 h-4" />
+                        <h4 className="text-[12px]">My Vouchers</h4>
                       </div>
                     </button>
-                    <hr className=" border-gray-200 mx-4" />
+                    <hr className="border-gray-200 mx-4 my-1" />
                     <button
                       onClick={() => { setIsProfileOpen(false); navigate("/wallet"); }}
                       className="w-full text-left px-3 py-2.5 text-gray-700 hover:bg-[#FFEDEE] hover:text-[#901c27] rounded-lg font-medium transition-all duration-200 cursor-pointer"
                     >
-                      <div className="flex flex-row gap-2">
-                        <img src={wallet} />
-                        <h4 className="text-[12px]"> My Wallet</h4>
-
+                      <div className="flex flex-row items-center gap-2">
+                        <img src={wallet} alt="Wallet" className="w-4 h-4" />
+                        <h4 className="text-[12px]">My Wallet</h4>
                       </div>
                     </button>
-                    <hr className=" border-gray-200 mx-4" />
                   </div>
 
-                  <div className="h-[1px] w-full  my-1"></div>
+                  <div className="h-[1px] w-full my-1 bg-gray-100"></div>
 
                   <div className="px-2">
                     <button
@@ -176,10 +179,10 @@ function UserNavbar({ user }) {
                         window.dispatchEvent(new Event("authChange"));
                         navigate("/");
                       }}
-                      className="w-full text-left px-3 py-2.5 text-[#C20505]  hover:bg-red-50 rounded-lg font-medium transition-all duration-200 cursor-pointer"
+                      className="w-full text-left px-3 py-2.5 text-[#C20505] hover:bg-red-50 rounded-lg font-medium transition-all duration-200 cursor-pointer"
                     >
-                      <div className="flex flex-row gap-2">
-                        <img src={logouticon} className="h-[]" />
+                      <div className="flex flex-row items-center gap-2">
+                        <img src={logouticon} alt="Logout" className="w-4 h-4" />
                         <h4 className="text-[12px]">Logout</h4>
                       </div>
                     </button>
@@ -194,7 +197,7 @@ function UserNavbar({ user }) {
       <div className="w-full h-[1px] bg-gray-100"></div>
 
       {/* --- SECONDARY NAVBAR ITEMS ROW --- */}
-      <div className="px-6 md:px-10 lg:px-[115px] py-3 bg-white overflow-x-auto hide-scrollbar border-b border-gray-100">
+      <div className="px-4 sm:px-6 md:px-10 lg:px-[115px] py-2 md:py-3 bg-white overflow-x-auto hide-scrollbar border-b border-gray-100">
         <div className="flex items-center gap-2 min-w-max">
           {secondaryNavItems.map((item, index) => (
             <div
@@ -206,10 +209,10 @@ function UserNavbar({ user }) {
                   navigate(item.path);
                 }
               }}
-              className="flex items-center gap-2 px-3 py-1 text-gray-600 rounded-[10px] hover:bg-[#FFEDEE] hover:text-[#961a20] cursor-pointer transition-all duration-100 group"
+              className="flex items-center gap-1.5 md:gap-2 px-2.5 py-1 text-gray-600 rounded-[10px] hover:bg-[#FFEDEE] hover:text-[#961a20] cursor-pointer transition-all duration-100 group"
             >
               <span className="text-[#961a20] opacity-80 group-hover:opacity-100 transition-opacity">{item.icon}</span>
-              <span className="font-medium text-[14px] whitespace-nowrap">{item.name}</span>
+              <span className="font-medium text-[13px] md:text-[14px] whitespace-nowrap">{item.name}</span>
             </div>
           ))}
         </div>
@@ -217,20 +220,18 @@ function UserNavbar({ user }) {
 
       {/* --- "ALL" SIDE CONTAINER OVERLAY MODAL --- */}
       {isAllMenuOpen && (
-        <div className="fixed inset-0 top-[160px] bg-black/20 z-[100] flex justify-start animate-fade-in">
-<div className="fixed left-0 top-[145px] w-[258px] h-[872px] bg-white shadow-2xl z-[100] overflow-y-auto">            
-            {/* Header / Close Area */}
-           
-
-            <div className="flex flex-col  gap-6">
+        <div className="fixed inset-0 top-[125px] md:top-[145px] bg-black/20 z-[100] flex justify-start animate-fade-in">
+          <div className="w-[240px] md:w-[258px] h-full bg-white shadow-2xl overflow-y-auto py-4">
+            
+            <div className="flex flex-col gap-6">
               {/* Recharge & Pay Bills Section */}
               <div>
-                <h3 className="text-[13px] font-bold text-[#901c27] tracking-wider uppercase mb-2 px-6">
+                <h3 className="text-[12px] md:text-[13px] font-bold text-[#901c27] tracking-wider uppercase mb-2 px-4 md:px-6">
                   Recharge & Pay Bills
                 </h3>
                 <div className="flex flex-col">
                   {rechargeBillsGroup.map((service, i) => (
-                    <div key={i} onClick={() => { setIsAllMenuOpen(false); navigate(service.path); }} className="text-[14px] font-medium text-gray-700 hover:text-[#800A1D]  px-6 py-2.5 transition-all duration-200 cursor-pointer block">
+                    <div key={i} onClick={() => { setIsAllMenuOpen(false); navigate(service.path); }} className="text-[13px] md:text-[14px] font-medium text-gray-700 hover:text-[#800A1D] hover:bg-gray-50 px-4 md:px-6 py-2.5 transition-all duration-200 cursor-pointer block">
                       {service.name}
                     </div>
                   ))}
@@ -239,12 +240,12 @@ function UserNavbar({ user }) {
 
               {/* Finance & Payouts Section */}
               <div>
-                <h3 className="text-[13px] font-bold text-[#901c27] tracking-wider uppercase mb-2 px-6">
+                <h3 className="text-[12px] md:text-[13px] font-bold text-[#901c27] tracking-wider uppercase mb-2 px-4 md:px-6">
                   Finance & Payouts
                 </h3>
                 <div className="flex flex-col">
                   {financePayoutsGroup.map((service, i) => (
-                    <div key={i} onClick={() => { setIsAllMenuOpen(false); navigate(service.path); }} className="text-[14px] font-medium text-gray-700 hover:text-[#800A1D] hover:bg-[#FFEDEE] px-6 py-2.5 transition-all duration-200 cursor-pointer block">
+                    <div key={i} onClick={() => { setIsAllMenuOpen(false); navigate(service.path); }} className="text-[13px] md:text-[14px] font-medium text-gray-700 hover:text-[#800A1D] hover:bg-[#FFEDEE] px-4 md:px-6 py-2.5 transition-all duration-200 cursor-pointer block">
                       {service.name}
                     </div>
                   ))}
@@ -355,26 +356,29 @@ export default function Navbar() {
   return (
     <>
       {openDropdown !== null && (
-        <div className="fixed inset-0 bg-black/50  z-40"></div>)}
+        <div className="fixed inset-0 bg-black/50 z-40 hidden md:block"></div>
+      )}
 
-      <nav className="fixed top-0 left-0 w-full px-6 md:px-10 pt-[5px] pb-[4.16px] flex items-center justify-between md:justify-evenly bg-white z-50 shadow-sm border-b border-gray-100">
-        <div className="flex items-center cursor-pointer" onClick={() => navigate("/")}>
-          <img src={logo} alt="ViralPe Logo" className="w-[90.84px] h-[90.84px]" />
-          <h1 className="text-[#901c27] text-[26px] font-bold tracking-tight">ViralPe</h1>
+      <nav className="fixed top-0 left-0 w-full px-4 sm:px-6 md:px-10 py-2 md:pt-[5px] md:pb-[4.16px] flex items-center justify-between lg:justify-evenly bg-white z-50 shadow-sm border-b border-gray-100">
+        
+        <div className="flex items-center cursor-pointer flex-shrink-0" onClick={() => navigate("/")}>
+          <img src={logo} alt="ViralPe Logo" className="w-[65px] h-[65px] md:w-[90.84px] md:h-[90.84px] object-contain" />
+          <h1 className="text-[#901c27] text-[20px] md:text-[26px] font-bold tracking-tight">ViralPe</h1>
         </div>
 
-        <div className="hidden md:flex items-center gap-2 lg:gap-8">
+        {/* Desktop Navigation Links */}
+        <div className="hidden lg:flex items-center gap-4 xl:gap-8">
           {navItems.map((item, index) => (
             <div key={index} className="relative flex flex-col items-center" onMouseEnter={() => setOpenDropdown(index)} onMouseLeave={() => setOpenDropdown(null)}>
 
               {/* Main Nav Items with Hover Background */}
-              <div className="flex flex-col items-center cursor-pointer py-2 px-4 rounded-xl  transition-all duration-200 mt-2"
+              <div className="flex flex-col items-center cursor-pointer py-2 px-3 xl:px-4 rounded-xl transition-all duration-200 mt-2"
                 onClick={() => {
                   if (item.path) {
                     navigate(item.path);
                   }
                 }}>
-                <div className=" flex items-center gap-[6px] text-[18px] text-(--primary-red) font-medium">
+                <div className="flex items-center gap-[6px] text-[16px] xl:text-[18px] text-[#901c27] font-medium">
                   {item.title}
                   {(item.menu || item.isMegaMenu) && (
                     <ChevronDown size={18} className={`transition-transform duration-300 ${openDropdown === index ? "rotate-180 text-[#901c27]" : "text-gray-400"}`} />
@@ -401,12 +405,10 @@ export default function Navbar() {
                                   setOpenDropdown(null);
                                   return;
                                 }
-
                                 if (["About Us", "Contact Us"].includes(menuItem.name?.trim())) {
                                   navigate("/about-us");
                                   setOpenDropdown(null);
                                 }
-
                                 if (menuItem.name?.trim() === "Management") {
                                   navigate("/management");
                                   setOpenDropdown(null);
@@ -419,13 +421,11 @@ export default function Navbar() {
                                     {menuItem.icon}
                                   </div>
                                 )}
-
                                 <span className="text-gray-700 group-hover:text-[#901c27] font-semibold text-[15px] whitespace-nowrap transition-colors">
                                   {isObject ? menuItem.name : menuItem}
                                 </span>
                               </div>
                               {isObject && menuItem.hasArrow && <ChevronRight size={18} className="text-gray-400 group-hover:text-[#901c27] flex-shrink-0 transition-colors" strokeWidth={2.5} />}
-
                             </div>
                           );
                         })}
@@ -435,12 +435,8 @@ export default function Navbar() {
 
                   {item.isMegaMenu && (
                     <div className="absolute top-[100%] left-1/2 -translate-x-1/2 mt-2 min-w-[600px] bg-white rounded-3xl shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-50 border border-gray-100 overflow-visible animate-fade-in before:content-[''] before:absolute before:-top-6 before:left-0 before:w-full before:h-6 before:bg-transparent">
-
-                      {/* Top Arrow */}
                       <div className="absolute -top-[8px] left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 rounded-sm shadow-[-4px_-4px_10px_rgb(0,0,0,0.04)] z-10"></div>
-
                       <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#901c27] to-[#e63946]"></div>
-
                       <div className="relative z-20 bg-white flex gap-8 px-8 py-8 rounded-3xl">
                         {item.columns.map((col, colIndex) => (
                           <div key={colIndex} className="flex-1 flex flex-col">
@@ -460,7 +456,6 @@ export default function Navbar() {
                                 <div className="flex items-center justify-center w-8 h-8 rounded-lg group-hover:bg-white transition-colors">
                                   {link.icon}
                                 </div>
-
                                 <span className="text-gray-700 font-semibold text-[14.5px] group-hover:text-[#901c27] transition-colors">
                                   {link.name}
                                 </span>
@@ -479,16 +474,73 @@ export default function Navbar() {
 
         <button
           onClick={() => navigate("/login-user")}
-          className="hidden md:block font-bold py-[12px] px-[28px] bg-[#901c27] text-white cursor-pointer rounded-xl hover:bg-[#7a1620] hover:shadow-lg hover:-translate-y-[1px] active:translate-y-[0px] transition-all duration-200"
+          className="hidden lg:block font-bold py-[10px] md:py-[12px] px-[20px] md:px-[28px] bg-[#901c27] text-white cursor-pointer rounded-xl hover:bg-[#7a1620] hover:shadow-lg hover:-translate-y-[1px] active:translate-y-[0px] transition-all duration-200"
         >
           Login
         </button>
 
-        <button className="md:hidden text-[#901c27] p-2 hover:bg-gray-100 rounded-lg transition-colors" onClick={() => setIsOpen(!isOpen)}>
+        {/* Mobile Hamburger Toggle */}
+        <button className="lg:hidden text-[#901c27] p-2 hover:bg-gray-100 rounded-lg transition-colors z-50" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {isOpen && <div className="absolute top-[90px] left-0 w-full bg-white shadow-xl md:hidden flex flex-col p-6 gap-6 h-screen overflow-y-auto pb-32 animate-slide-right border-t border-gray-100"></div>}
+        {/* Mobile Dropdown Menu */}
+        {isOpen && (
+          <div className="absolute top-[80px] md:top-[90px] left-0 w-full bg-white shadow-xl lg:hidden flex flex-col p-6 gap-4 h-[calc(100vh-80px)] overflow-y-auto pb-32 animate-slide-right border-t border-gray-100 z-40">
+            {navItems.map((item, index) => (
+              <div key={index} className="flex flex-col border-b border-gray-100 pb-4">
+                <div 
+                  className="text-[#901c27] text-[18px] font-bold py-2"
+                  onClick={() => { if (item.path) { navigate(item.path); setIsOpen(false); }}}
+                >
+                  {item.title}
+                </div>
+                
+                {/* Standard Submenu for Mobile */}
+                {item.menu && !item.isMegaMenu && (
+                  <div className="flex flex-col gap-2 pl-4 mt-2">
+                    {item.menu.map((sub, i) => (
+                      <div 
+                        key={i} 
+                        className="text-gray-700 text-[15px] py-1 cursor-pointer"
+                        onClick={() => { if (sub.path) { navigate(sub.path); setIsOpen(false); }}}
+                      >
+                        {typeof sub === 'object' ? sub.name : sub}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Mega Menu handling for Mobile */}
+                {item.isMegaMenu && item.columns && (
+                  <div className="flex flex-col gap-4 pl-4 mt-2">
+                    {item.columns.map((col, colIndex) => (
+                      <div key={colIndex} className="flex flex-col gap-2">
+                        {col.map((link, i) => link.type === "header" ? (
+                          <span key={i} className={`text-[12px] font-bold text-gray-400 uppercase mt-2`}>{link.name}</span>
+                        ) : (
+                          <div 
+                            key={i} 
+                            className="text-gray-700 text-[15px] py-1 cursor-pointer"
+                            onClick={() => { if (link.path) { navigate(link.path); setIsOpen(false); }}}
+                          >
+                            {link.name}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <button
+              onClick={() => { navigate("/login-user"); setIsOpen(false); }}
+              className="w-full font-bold py-3 mt-4 bg-[#901c27] text-white rounded-xl shadow-sm"
+            >
+              Login
+            </button>
+          </div>
+        )}
       </nav >
     </>
   );

@@ -1,7 +1,8 @@
 import React from "react";
 import { BadgeCheck, Lock, Zap } from "lucide-react";
 import Homescreen from "../../../public/images/homescreen.png";
-import Graph from "../../../public/images/graphic.png";
+// import Graph from "../../../public/images/graphic.png";
+import Homeframe from "../../../public/images/homeframe.svg";
 
 const WhyChooseViralPe = () => {
   return (
@@ -49,40 +50,22 @@ const WhyChooseViralPe = () => {
       <div className="w-full lg:w-1/2 relative flex items-center justify-center min-h-[500px] lg:min-h-full bg-white/50">
 
         {/* Background Graphic */}
-        <div
+        {/* <div
           className="bg-gradient-to-b from-[#901C27] to-[#FFD5D9] absolute opacity-60  bottom-65 left-0 w-full h-[40%] bg-contain bg-bottom bg-no-repeat opacity-40 z-0 "
           style={{
             backgroundImage: `url(${Graph})`,
           }}
-        />
+        /> */}
 
         {/* Phone Mockup */}
         <img
-          src={Homescreen}  
+          src={Homeframe}  
           alt="ViralPe App Mockup"
-          className="w-[28px] md:w-[326.46px] h-[639px] object-contain relative z-10 drop-shadow-2xl"
+          className="w-[519px] h-[639px] object-contain relative z-10 drop-shadow-2xl"
         />
 
         {/* Tooltip 1 */}
-        <div className="max-h-[57.46px] absolute top-[15%] lg:top-[20%] left-[5%] lg:left-[10%] bg-white rounded-[13.93px] px-5 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)] z-20 border border-gray-100">
-          <p className="text-[#222222]  text-[13px] md:text-[19.15px]">
-            Pay Bills in Seconds
-          </p>
-        </div>
-        {/* Tooltip 2 */}
-        <div className=" max-h-[74.87px] md:max-w-[352.58px] absolute top-[40%] lg:top-[40%] right-[5%] lg:-right-[5%] bg-white rounded-[13.93px] px-4 py-2 shadow-[0_8px_30px_rgb(0,0,0,0.08)] z-20 border border-gray-100 mr-[50px]">
-          <p className="text-[#222222]  text-[13px] md:text-[19.15px] leading-snug">
-            Set up automatic payments for peace of mind
-          </p>
-        </div>
-
-        {/* Tooltip 3 */}
-        <div className="rounded-[13.93px] max-h-[57.46px] md:max-w-[324.72px] absolute bottom-[20%] lg:bottom-[15%] left-[2%] lg:left-0 bg-white  px-5 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)] z-20 border border-gray-100">
-          <p className="text-[#222222]  text-[13px] md:text-[19.15px]">
-            Track your spending in real-time
-          </p>
-        </div>
-
+       
       </div>
     </div>
   );

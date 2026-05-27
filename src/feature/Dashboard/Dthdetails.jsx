@@ -1,75 +1,81 @@
 import React, { useState } from 'react';
 import jio from "/images/jio.svg"
 import airtel from "/images/airtel.svg"
-import Vi from "../../../public/images/vi.svg";
+import Vi from "../../../public/images/Vi.svg";
 import Bsnl from "../../../public/images/bsnl.svg"
+import tata from "../../../public/images/tataicon.svg"
+import Frame_1 from "../../../public/images/Frame_1.png";
+import Frame_2 from "../../../public/images/Frame_2.png";
 import Appleicon from "../../../public/images/appleicon.png";
 import playstoreicon from "../../../public/images/playstoreicon.png";
-import thunder from "../../../public/images/thunder.svg";
+import thunder from "../../../public/images/thunder.png";
 import wallet from "../../../public/images/wallet1.svg";
 import Greenthunder from "../../../public/images/greenthunder.svg";
 import Greentick from "../../../public/images/greenTick.svg";
 import discount from "../../../public/images/discount.svg";
-import lock from "../../../public/images/lock.svg"
+import lock from "../../../public/images/lock.png"
+import dishtv from "../../../public/images/dishtvicon.svg";
+import gift from "../../../public/images/gift.svg";
+import headphones from "../../../public/images/headphones.png";
+import sundirect from "../../../public/images/sundirecticon.svg";
 import { ArrowRight } from "lucide-react";
-import FeatureBanner from './FeatureBanner';
+import FeatureBanner from '../Dashboard/FeatureBanner';
 // Mock Data for Recharge Plans
+
 const plansData = [
     {
         id: 1,
-        price: 450,
-        badge: 'Popular',
-        cashback: '5% Cashback',
-        validity: '28 Days',
-        data: 'Unlimited',
-        desc: 'Add-On data pack for ULD users; Includes Unlimited Data, 28 days, No SV. Valid on ULD Hero plan T&C Apply',
+        price: 299,
+        plan: "HD Value Plus",
+
+        cashback: "5% Cashback",
+        validity: "28 Days",
+
+        desc: "Add-On data pack..."
     },
     {
         id: 2,
-        price: 900,
-        badge: 'Exclusive',
-        cashback: '20% Cashback',
-        validity: '90 Days',
-        data: '200GB',
-        desc: 'Ultimate plan with 200GB data and additional benefits like international calling. Valid on Elite plan T&C Apply',
+        price: 499,
+        plan: "Family Entertainemtt ",
+        cashback: "20% Cashback",
+        validity: "90 Days",
+        desc: "Ultimate plan..."
+    }
+
+
+
+];
+
+const recentRecharges = [
+    {
+        image: tata,
+        name: "Tata Play",
+        id: "149805048",
+        amount: "₹456",
+        daysLeft: "25 Days Left",
+        badgeClass: "text-[#2E7D32] bg-[#E8F5E9]",
+        imageClass: "h-[36px] w-[36px]",
     },
     {
-        id: 3,
-        price: 1000,
-        badge: 'Best Deal',
-        cashback: '20% Cashback',
-        validity: '90 Days',
-        data: '200GB',
-        desc: 'Offers 200GB data valid for 90 days, includes unlimited calls and texts. Valid on Ultimate plan T&C Apply',
+        image: dishtv,
+        name: "DishTV",
+        id: "90809 879988",
+        amount: "₹456",
+        daysLeft: "12 Days Left",
+        badgeClass: "text-[#E65100] bg-[#FFF3E0]",
+        imageClass: "h-[50px] w-[50px]",
     },
     {
-        id: 4,
-        price: 500,
-        badge: 'Value Pick',
-        cashback: '10% Cashback',
-        validity: '30 Days',
-        data: '100GB',
-        desc: 'Offers 100GB data valid for 30 days, includes access to select streaming services. Valid on Basic plan T&C Apply',
-    },
-    {
-        id: 5,
-        price: 750,
-        badge: 'Top Choice',
-        cashback: '15% Cashback',
-        validity: '60 Days',
-        data: '150GB',
-        desc: 'Offers 150GB data valid for 60 days, including priority customer service. Valid on Premium plan T&C Apply',
-    },
-    {
-        id: 6,
-        price: 600,
-        badge: 'Best Value',
-        cashback: '10% Cashback',
-        validity: '30 Days',
-        data: '100GB',
-        desc: 'Includes a 100GB data pack with rollover benefits. Valid on SuperSaver plan T&C Apply',
+        image: sundirect,
+        name: "DishTV", // Matching snapshot label discrepancy perfectly
+        id: "90809 879988",
+        amount: "₹456",
+        daysLeft: "2 Days Left",
+        badgeClass: "text-[#D32F2F] bg-[#FFEBEE]",
+        imageClass: "h-[46px] w-[46px]",
     },
 ];
+
 const feature1 = [
     {
         id: "secure-payments",
@@ -82,21 +88,21 @@ const feature1 = [
         id: "instant-delivery",
         title: "Instant Code Delivery",
         description: "Get Vouchers In Seconds",
-        icon: '/images/thunder.png',
+        icon: '/images/Thunder.png',
         isRating: false,
     },
     {
         id: "customer-support",
         title: "24/7 Customer Support",
         description: "Help available round the clock",
-        icon: '/images/headphones.png',
+        icon: '/images/Headphones.png',
         isRating: false,
     },
     {
         id: "trusted-users",
         title: "Trusted By 1M+ Users",
         description: "4.8/5",
-        icon: '/images/vector.svg',
+        icon: '/images/Vector.svg',
         isRating: true,
     },
 ];
@@ -110,19 +116,15 @@ const renderIcon = (icon) => {
         />
     );
 };
-const ReachargeOn = [
-    { title: 'Instant Recharge', desc: 'Recharge in just a seconds', icon: thunder },
-    { title: 'Best Plans', desc: 'Compare and choose the best plans', icon: discount },
-    { title: 'Earn Cashback', desc: 'Earn cashback on every recharge', icon: wallet },
-    { title: 'Secure Payments', desc: '256-bit SSL encrypted transactions', icon: lock },
+
+
+const dthOperators = [
+    { type: "tata", logo: tata, label: "Tata Play", cashback: "5% Cashback" },
+    { type: "dish", logo: dishtv, label: "Dish TV", cashback: "5% Cashback" },
+    { type: "airtel", logo: airtel, label: "Airtel Digital TV", cashback: "5% Cashback" },
+    { type: "sun", logo: sundirect, label: "Sun Direct", cashback: "5% Cashback" },
 ];
 
-const RecentRecharges = [
-    { number: "+91 90000 90000", price: "₹456", icon: airtel },
-    { number: "+91 90000 90000", price: "₹456", icon: airtel },
-    { number: "+91 90000 90000", price: "₹456", icon: jio },
-    { number: "+91 90000 90000", price: "₹456", icon: airtel },
-];
 
 const AllNetwork = [
     { icon: airtel, name: 'Airtel', cb: '5% Cashback' },
@@ -131,7 +133,7 @@ const AllNetwork = [
     { icon: Vi, name: 'Vi', cb: '20% Cashback' },
     { icon: Vi, name: 'Vi', cb: '20% Cashback' },
 ];
-const categories = ['Made for You (06)', 'Popular', 'Talktime', '5G Unlimited', '2GB/Day Data', 'Unlimited'];
+const categories = ['Made for You (06)', 'Popular', 'Monthly', 'Long-validity', 'Add-on Packs '];
 
 export default function PrepaidRechargeSection() {
     const [selectedPlan, setSelectedPlan] = useState(plansData[0]);
@@ -174,33 +176,33 @@ export default function PrepaidRechargeSection() {
     ];
 
     return (
-        <div className='pt-12'>
+        <div className=''>
             <div className="min-h-screen  p-4 md:p-8 font-sans antialiased text-gray-800">
 
                 <div className="max-w-[1217px] mx-auto flex flex-col md:flex-row justify-between">
 
 
                     {/* LEFT & CENTER: Main Selection Panel */}
-                    <div className="lg:col-span-2 space-y-6">
+                    <div className="flex flex-col gap-4 ">
 
                         {/* Main Container Card */}
-                        <div className=" bg-white rounded-2xl p-6 shadow-sm border border-gray-100 max-w-full max-h-full lg:w-[837px] lg:h-[1027px]">
-                            <h2 className="text-xl font-bold mb-4 text-gray-900">Prepaid Recharge</h2>
+                        <div className=" bg-white h-[564px] rounded-2xl p-6 shadow-sm border border-gray-100 max-w-full max-h-full lg:w-[837px] ">
+                            <h2 className="text-xl font-bold mb-4 text-gray-900">DTH Recharge</h2>
 
                             {/* Top Identity Block */}
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-dashed border-gray-200 pb-6 mb-7">
                                 <div className="flex items-center gap-3">
-                                    <img src={jio} />
+                                    <img src={tata} className='h-[36px] w-[36px]' />
                                     <div>
-                                        <div className="font-bold text-gray-900">+91 90000 00000</div>
-                                        <div className="text-xs text-gray-400">Jio • Andhra Pradesh</div>
+                                        <div className="font-bold text-gray-900">14890765567</div>
+                                        <div className="text-xs text-gray-400">TATA Paly  .  +91 98987 48393</div>
                                     </div>
                                 </div>
 
                                 {/* Quick History Button */}
                                 <div className="flex items-center gap-3  bg-white border-2 border-gray-100 rounded-xl p-3 sm:px-4">
                                     <div className="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center text-pink-500">
-                                        <img src={thunder} className='h-[20px] w-[20px]' />
+                                        <img src={thunder} />
                                     </div>
                                     <div>
                                         <div className="text-xs font-semibold text-gray-900">Recharge with Last Plan</div>
@@ -235,7 +237,7 @@ export default function PrepaidRechargeSection() {
                             </div>
 
                             {/* Categories Horizontal Scroll */}
-                            <div className="flex  overflow-x-auto pb-4 mb-6 no-scrollbar justify-between ">
+                            <div className="flex  overflow-x-auto pb-4 mb-6 no-scrollbar gap-3 ">
                                 {categories.map((cat) => (
                                     <button
                                         key={cat}
@@ -252,7 +254,7 @@ export default function PrepaidRechargeSection() {
 
                             {/* Grid of Plans */}
                             <div className='mt-10'>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="flex  gap-4">
                                     {plansData.map((plan) => {
                                         const isSelected = selectedPlan?.id === plan.id;
                                         return (
@@ -273,7 +275,7 @@ export default function PrepaidRechargeSection() {
                                                     {/* Info Row */}
                                                     <div className="flex items-baseline justify-between mt-2 mb-4">
                                                         <div className="flex items-center gap-2">
-                                                            <span className="text-xl font-extrabold text-gray-900">₹{plan.price}</span>
+                                                            <span className="text-xl font-extrabold text-gray-900">₹{plan.plan}</span>
                                                             <span className="bg-blue-50 text-blue-600 text-[10px] font-bold px-1.5 py-0.5 rounded">
                                                                 {plan.badge}
                                                             </span>
@@ -284,8 +286,8 @@ export default function PrepaidRechargeSection() {
                                                                 <div className="text-xs font-bold text-gray-800">{plan.validity}</div>
                                                             </div>
                                                             <div>
-                                                                <div className="text-[10px] uppercase tracking-wider text-gray-400">Data</div>
-                                                                <div className="text-xs font-bold text-gray-800">{plan.data}</div>
+                                                                <div className="text-[10px] uppercase tracking-wider text-gray-400">Price</div>
+                                                                <div className="text-xs font-bold text-gray-800">{plan.price}</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -313,10 +315,85 @@ export default function PrepaidRechargeSection() {
 
 
                         </div>
+
+                        <div className="flex flex-row gap-6 items-start mx-auto">
+
+                            {/* Left: Recent Recharges Card */}
+                            <div className=" flex flex-col  max-w-[837px] w-full  bg-white rounded-2xl p-8 border border-gray-100 shadow-sm ">
+                                <h2 className="text-xl font-bold mb-6">Recent Recharges</h2>
+                                <div className="flex flex-row gap-4">
+                                    {recentRecharges.map((recharge, index) => (
+                                        <div
+                                            key={index}
+                                            className="border border-gray-100 rounded-2xl p-4 flex flex-col w-[246px] h-[131px] relative hover:shadow-md transition bg-white"
+                                        >
+                                            <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                                                </svg>
+                                            </button>
+
+                                            <div className="flex items-center gap-3 mb-4">
+                                                <div className="w-12 h-12 rounded-xl flex items-center justify-center p-1 bg-white border border-gray-50">
+                                                    <img
+                                                        src={recharge.image}
+                                                        alt={recharge.name}
+                                                        className={`${recharge.imageClass} object-contain`}
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-bold text-sm text-gray-900">{recharge.name}</h4>
+                                                    <p className="text-xs text-gray-400 font-medium">{recharge.id}</p>
+                                                    <p className="text-xs font-bold text-gray-800 mt-0.5">{recharge.amount}</p>
+                                                </div>
+                                            </div>
+
+                                            <span className={`inline-block self-start text-[11px] font-semibold px-2.5 py-1 rounded-md ${recharge.badgeClass}`}>
+                                                {recharge.daysLeft}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div className="max-w-[837px] bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                            <div className="flex items-center justify-between mb-6">
+                                <h2 className="text-xl font-bold">All DTH Operators</h2>
+                                <a href="#view-all" className="text-[#800A1D] text-xs font-bold flex items-center gap-1 hover:underline">
+                                    View More
+                                    <ArrowRight size={14} />
+                                </a>
+                            </div>
+
+                            <div className="grid grid-cols-4 gap-4">
+                                {dthOperators.map((operator, index) => (
+                                    <div
+                                        key={index}
+                                        className="border border-gray-100 rounded-2xl p-5 flex flex-col items-center justify-between hover:shadow-md transition bg-white max-w-[246px] w-full max-h-[140px]"
+                                    >
+                                        <div className="w-20 h-16 my-auto flex items-center justify-center">
+                                            <img
+                                                src={operator.logo}
+                                                alt={operator.label}
+                                                className="max-h-full max-w-full object-contain"
+                                            />
+                                        </div>
+                                        <div>
+                                            <span className="text-[11px] font-bold text-[#2E7D32] bg-[#E8F5E9] px-4 py-1 rounded-[8px] w-full text-center">
+                                                {operator.cashback}
+                                            </span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
 
                     {/* RIGHT: Summary Sidebar */}
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col justify-between gap-3">
 
                         {/* Checkout Breakdown Card */}
                         <div className="bg-white rounded-2xl  p-6 shadow-sm border border-gray-100 w-full sm:w-[348px] sm:h-[607px] flex flex-col justify-between">
@@ -400,130 +477,56 @@ export default function PrepaidRechargeSection() {
                                     Instant Recharge
                                 </span>
                             </div>
-
-                            
                         </div>
 
-                        {/* Value Propositions Card via Map Function */}
-                        <div className="bg-white  max-w-[348px] w-full h-[388px] p-4 rounded-[13.78px] shadow-sm border border-slate-100">
-                            <div className="gap-3 pl-5 space-y-3 ">
-                                <h3 className="text-lg font-bold mb-4">Why Recharge On ViralPe?</h3>
+                        <div className=" flex flex-col gap-6">
 
-                                {ReachargeOn.map((item, idx) => (
-                                    <div key={idx} className="flex p-3 gap-3">
-                                        <div className=" w-8 h-8 rounded-lg bg-rose-50 flex items-center justify-center flex-shrink-0">
-                                            <img src={item.icon} alt={item.title} className="w-5 h-5 object-contain" />
-                                        </div>
-                                        <div >
-                                            <h4 className="text-sm font-semibold">{item.title}</h4>
-                                            <p className="text-xs text-gray-500">{item.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div className="mx-auto mt-[32px] bg-white rounded-2xl p-6 shadow-sm border border-gray-100 max-w-full max-h-full lg:w-[1217px] ">
-                    <h2 className="text-xl font-bold mb-4">Recent Recharges</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {RecentRecharges.map((item, index) => (
-                            <div key={index} className="border border-slate-100 rounded-xl p-4 bg-white flex flex-col justify-between">
-                                <div className="flex items-start justify-between mb-4">
-                                    <div className="flex gap-4 items-center">
-                                        <div className='p-2 bg-[#FFEDEE] rounded-2xl w-[60px] h-[60px] flex items-center justify-center flex-shrink-0'>
-                                            <img src={item.icon} alt="operator icon" className="w-10 h-10 object-contain" />
-                                        </div>
-                                        <div>
-                                            <p className="font-bold text-sm text-gray-900">{item.number}</p>
-                                            <p className="text-[#901c27] font-bold text-sm mt-0.5">{item.price}</p>
-                                            <button className="text-xs text-[#901c27]  mt-1 block hover:text-rose-600">Continue Recharge</button>
-                                        </div>
-                                    </div>
-                                    <button className="text-gray-400 hover:text-gray-600 text-lg">⋮</button>
-                                </div>
-                                <div className="border-t border-dashed border-slate-200 pt-2 text-[10px] text-gray-400">
-                                    Last Recharge: 01 May 2026, 10:09AM
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* SECTION 3: Operators & App Banner (FIXED GRID HERE) */}
-                <div className="flex mt-[32px]  gap-6 max-w-[1217px] justify-between mx-auto">
-
-                    {/* Network Operators List (Fixed Width & Height removed) */}
-                    <div className="lg:col-span-2 max-w-[752px] bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
-                        <div className="flex justify-between items-center mb-6">
-                            <h2 className="text-xl font-bold text-gray-900">All Network Operators</h2>
-                            <button className="text-[#901c27] font-semibold text-sm flex items-center gap-1  cursor-pointer">
-                                View More  <ArrowRight size={14} />
-                            </button>
-                        </div>
-
-                        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-                            {AllNetwork.map((op, idx) => (
-                                <div key={idx} className="border border-slate-100 rounded-xl p-4 flex flex-col items-center justify-center text-center bg-white shadow-sm hover:border-rose-200 transition-colors">
-                                    <div className="w-12 h-12 flex items-center justify-center mb-3">
-                                        <img src={op.icon} alt={op.name} className="w-full h-full object-contain" />
-                                    </div>
-                                    <span className="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md w-full whitespace-nowrap">
-                                        {op.cb}
+                            {/* Promo banner 5% cashback */}
+                            <div className="bg-[#FFF2F4] rounded-2xl p-6 relative overflow-hidden flex items-center justify-between border border-[#FFE1E5]">
+                                <div className="max-h-[146px] max-w-[348px] w-full">
+                                    <h4 className="text-[20px] font-semibold text-[#1C1B1B]">
+                                        Extra 5% Cashback
+                                    </h4>
+                                    <p className="text-[11px] text-gray-500 mt-1 leading-relaxed">
+                                        On DTH Recharge of ₹500 or more
+                                    </p>
+                                    <span className="text-[9px] text-gray-400 block mt-4 font-medium">
+                                        *T&C Apply
                                     </span>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Marketing Banner (Fixed w-110, ml-32, h-66 completely removed to make it fit properly) */}
-                    <div className="relative bg-[#FFEDEE] w-full max-w-[433px] rounded-2xl flex flex-row  overflow-hidden shadow-sm border border-rose-100  ">
-                        {/* --- Left Text Content --- */}
-                        <div className="flex flex-col justify-center py-6 pl-7 z-10 w-3/5">
-                            <h2 className="font-bold text-[24px] sm:text-[26px] leading-[1.2] text-[#222222] mb-2">
-                                Recharge or Pay<br />Mobile Bill
-                            </h2>
-
-                            <p className="text-[13px] leading-[1.4] text-gray-600 mb-5 max-w-[180px]">
-                                Collective earnings from our user community
-                            </p>
-
-                            <div className="space-y-2">
-                                <button className="rounded-lg py-[8px] px-[12px] flex items-center gap-[6px] bg-[#6F0014] text-white hover:bg-[#52010f] transition-colors shadow-sm w-fit cursor-pointer text-[12px] font-medium">
-                                    <span>Download ViralPe App</span>
-                                    <img src={playstoreicon} alt="Play Store" className="w-[14px] h-[14px] object-contain" />
-                                </button>
-                                <button className="rounded-lg py-[8px] px-[12px] flex items-center gap-[6px] bg-[#6F0014] text-white hover:bg-[#52010f] transition-colors shadow-sm w-fit cursor-pointer text-[12px] font-medium">
-                                    <span>Download ViralPe App</span>
-                                    <img src={Appleicon} alt="Apple" className="w-[14px] h-[14px] object-contain" />
-                                </button>
+                                <img src={gift} />
                             </div>
-                        </div>
 
-                        {/* --- Right Frame/Mockup Side --- */}
-                        <div className="w-2/5 relative ">
-                            {/* Mobile Outer Wrapper */}
-                            <div className="absolute top-[60px] right-4 w-[180px] h-[354px] bg-white rounded-t-[25.2px] border-[6.3px] border-[#222222] z-0 flex flex-col items-center pt-[30px] shadow-sm">
-                                <img
-                                    src="/images/logoname.png"
-                                    alt="ViralPe Logo"
-                                    className="w-[90px] h-auto object-contain"
-                                />
+                            {/* Need Help Box */}
+                            <div className=" mx-w-[348px] w-full  max-h-[151px] bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex">
+                                <div className="flex gap-[28px]">
+                                    <div className="max-w-[50px] max-h-[50px] rounded-full h-full w-full">
+                                        <img src={headphones} className="h-full w-full" />
+                                    </div>
+                                    <div className="flex flex-col max-w-[182px] w-full">
+                                        <h4 className="text-base font-bold text-gray-900">Need Help?</h4>
+                                        <p className="text-xs text-gray-400 mt-1 mb-4 font-medium">
+                                            Chat with our support teams
+                                        </p>
+                                        <button className="border border-[#800A1D] text-[#800A1D] font-bold text-xs px-6 py-2.5 rounded-xl hover:bg-[#800A1D] hover:text-white transition duration-200 flex items-center gap-2">
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                            </svg>
+                                            Chat Now
+                                        </button>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
-
+              
             </div>
+              <div>
+                <FeatureBanner />
+                 </div>
 
-
-                    <FeatureBanner />
         </div>
 
     );

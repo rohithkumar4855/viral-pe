@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { Search, Ticket, ShoppingBag, ChevronUp, ChevronDown, Check, Star, ShieldCheck, Zap, Lock, Headphones } from 'lucide-react';
+import { Search, Ticket, ShoppingBag, ChevronUp, ChevronDown, Check, Star, ShieldCheck, Zap, Lock, Headphones, LockOpen } from 'lucide-react';
 import Myntra from "/images/myntra.png"
 import StarBucks from "/images/starbucks.png"
 import Nike from "/images/nike.png"
 import Trends from "/images/trends.svg"
 import { useNavigate } from 'react-router-dom';
-
+import lock from "/images/lock.svg"
+import wallet from "/images/wallet2.svg"
+import thunder from "/images/thunder.svg"
+import headphones from "/images/headphone.svg"
+import verified from "/images/verified1.svg"
 export default function Vouchers() {
     // 1. Navigation Tabs Configuration
     const navigate = useNavigate();
@@ -22,44 +26,44 @@ export default function Vouchers() {
     ];
 
     const features = [
-    {
-        id: "secure-payments",
-        title: "100% Secure Payments",
-        description: "256-bit SSL Encrypted",
-        icon: '/images/lock.png',
-        isRating: false,
-    },
-    {
-        id: "instant-delivery",
-        title: "Instant Code Delivery",
-        description: "Get Vouchers In Seconds",
-        icon: '/images/thunder.png',
-        isRating: false,
-    },
-    {
-        id: "customer-support",
-        title: "24/7 Customer Support",
-        description: "Help available round the clock",
-        icon: '/images/headphones.png',
-        isRating: false,
-    },
-    {
-        id: "trusted-users",
-        title: "Trusted By 1M+ Users",
-        description: "4.8/5",
-        icon: '/images/vector.svg',
-        isRating: true,
-    },
-];
-const renderIcon = (icon) => {
-    return (
-        <img
-            src={icon}
-            alt="icon"
-            className="w-8.5 h-8.5 object-contain"
-        />
-    );
-};
+        {
+            id: "secure-payments",
+            title: "100% Secure Payments",
+            description: "256-bit SSL Encrypted",
+            icon: '/images/lock.svg',
+            isRating: false,
+        },
+        {
+            id: "instant-delivery",
+            title: "Instant Code Delivery",
+            description: "Get Vouchers In Seconds",
+            icon: '/images/thunder.svg',
+            isRating: false,
+        },
+        {
+            id: "customer-support",
+            title: "24/7 Customer Support",
+            description: "Help available round the clock",
+            icon: '/images/headphone.svg',
+            isRating: false,
+        },
+        {
+            id: "trusted-users",
+            title: "Trusted By 1M+ Users",
+            description: "4.8/5",
+            icon: '/images/vector.svg',
+            isRating: true,
+        },
+    ];
+    const renderIcon = (icon) => {
+        return (
+            <img
+                src={icon}
+                alt="icon"
+                className="w-8.5 h-8.5 object-contain"
+            />
+        );
+    };
     // 2. Filter Sidebar & Categories State Configurations
     const [sections, setSections] = useState({
         brands: true,
@@ -87,7 +91,8 @@ const renderIcon = (icon) => {
         { id: 'Beauty', label: 'Beauty' },
         { id: 'Entertainment', label: 'Entertainment' },
         { id: 'Books', label: 'Books' },
-        { id: 'Gaming', label: 'Gaming' }
+        { id: 'Gaming', label: 'Gaming' },
+        { id: 'Travel', label: 'Travel' }
     ];
 
     // 4. Products Voucher Mock Data (FIXED: Added category, price, and numeric discount)
@@ -192,12 +197,16 @@ const renderIcon = (icon) => {
         return result;
     };
 
+    const logoClasses = {
+        Nike: "h-[54px] w-[102px]",
+        Trends:"h-[19px] w-[132px]"
+    };
     const displayVouchers = getFilteredVouchers();
 
     return (
         <div className="min-h-screen  text-gray-800 antialiased font-sans">
             {/* HEADER NAVBAR */}
-            <div className="w-full max-w-[1210px] px-4 py-5 border-b border-gray-100/50 bg-[#FCF9F9]">
+            <div className="w-full max-w-[1210px] px-4  border-gray-100/50 ">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Vouchers</h1>
 
@@ -231,8 +240,8 @@ const renderIcon = (icon) => {
             </div>
 
             {/* MAIN LAYOUT WRAPPER */}
-            <div className="max-w-[1215px]  mx-auto px-4 py-6">
-                <div className="flex flex-row  md:grid-cols-3 lg:grid-cols-9 gap-6 items-start">
+            <div className="max-w-[1215px]  mx-auto ">
+                <div className="flex flex-row pt-10 gap-6 items-start">
 
                     {/* COLUMN 1: LEFT SIDEBAR (FILTERS & WHY VIRALPE) */}
                     <div className="flex flex-col gap-2 ">
@@ -355,7 +364,7 @@ const renderIcon = (icon) => {
                             <div className="flex flex-col gap-4">
                                 <div className="flex items-start gap-3.5">
                                     <div className="p-2.5 bg-[#FDF2F2] rounded-xl text-[#8A1C24] shrink-0">
-                                        <ShieldCheck className="w-5 h-5 stroke-[2]" />
+                                        <img src={verified} className='w-[19px] h-[19px]'/>
                                     </div>
                                     <div>
                                         <h4 className="text-[13px] font-bold text-[#8A1C24] leading-tight">100% Verified Offers</h4>
@@ -365,7 +374,7 @@ const renderIcon = (icon) => {
 
                                 <div className="flex items-start gap-3.5">
                                     <div className="p-2.5 bg-[#FDF2F2] rounded-xl text-[#8A1C24] shrink-0">
-                                        <Zap className="w-5 h-5 stroke-[2]" />
+                                       <img src={thunder} className='w-[19px] h-[19px]'/>
                                     </div>
                                     <div>
                                         <h4 className="text-[13px] font-bold text-[#8A1C24] leading-tight">Instant Code Delivery</h4>
@@ -375,7 +384,7 @@ const renderIcon = (icon) => {
 
                                 <div className="flex items-start gap-3.5">
                                     <div className="p-2.5 bg-[#FDF2F2] rounded-xl text-[#8A1C24] shrink-0">
-                                        <Lock className="w-5 h-5 stroke-[2]" />
+                                        <img src={lock} className='w-[19px] h-[19px]'/>
                                     </div>
                                     <div>
                                         <h4 className="text-[13px] font-bold text-[#8A1C24] leading-tight">Secure Payments</h4>
@@ -385,7 +394,7 @@ const renderIcon = (icon) => {
 
                                 <div className="flex items-start gap-3.5">
                                     <div className="p-2.5 bg-[#FDF2F2] rounded-xl text-[#8A1C24] shrink-0">
-                                        <Headphones className="w-5 h-5 stroke-[2]" />
+                                        <img src={headphones} className='w-[19px]'/>
                                     </div>
                                     <div>
                                         <h4 className="text-[13px] font-bold text-[#8A1C24] leading-tight">24/7 Customer Support</h4>
@@ -408,7 +417,7 @@ const renderIcon = (icon) => {
                                         <button
                                             key={category.id}
                                             onClick={() => setActiveCategory(category.id)}
-                                            className={`whitespace-nowrap px-5 py-2 text-sm font-medium rounded-2xl border transition-all duration-200 outline-none select-none
+                                            className={`whitespace-nowrap px-6 py-2 text-sm font-medium rounded-[12px] border transition-all duration-200 outline-none select-none
                         ${isActive
                                                     ? 'bg-[#8A1C24] text-white border-[#8A1C24] shadow-sm'
                                                     : 'bg-white text-gray-800 border-gray-200 hover:bg-gray-50'
@@ -421,19 +430,21 @@ const renderIcon = (icon) => {
                             </div>
                         </div>
 
-                        {/* Product Brand Cards Grid Viewport */}
+                     
 
-                        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-4">
+                        {/* Product Brand Cards Grid Viewport */}
+                        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                             {displayVouchers.map((voucher) => (
                                 <div
                                     key={voucher.id}
                                     onClick={() => navigate('/voucher-details', { state: voucher })}
-                                    className=" rounded-[15.45px] bg-white border border-gray-100/70 pt-6 p-2 shadow-sm hover:shadow-md transition-all flex flex-col items-center relative min-h-[157px] max-w-[163px]"
+                                    /* FIXED: Applied strict h-[157px] and w-[163px] with overflow-hidden for uniformity */
+                                    className="rounded-[15px] bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all flex flex-col relative h-[157px] w-full max-w-[163px] mx-auto overflow-hidden cursor-pointer"
                                 >
                                     {/* Cashback Header Badges */}
                                     {!voucher.noHeaderTag && (
-                                        <div className={`absolute top-0 left-0 text-[10px] font-bold px-3 py-1 rounded-br-xl rounded-tl-2xl shadow-xs tracking-tight
-                                            ${voucher.isPromo
+                                        <div className={`absolute top-0 left-0 text-[10px] font-bold px-3 py-1 rounded-br-xl shadow-sm tracking-tight z-10
+                    ${voucher.isPromo
                                                 ? 'bg-[#EBF3FF] text-blue-700 border-b border-r border-blue-100'
                                                 : 'bg-[#EAFDF3] text-[#149B52]'
                                             }`}
@@ -442,27 +453,25 @@ const renderIcon = (icon) => {
                                         </div>
                                     )}
 
-                                    {/* 1. FIXED: Image gets its own flexible container */}
-                                    <div className=" mt-3 flex items-center justify-center shrink-0">
+                                    {/* FIXED: Added flex-1 and mt-6 so the image takes up the exact middle space, pushing text to the bottom evenly */}
+                                    <div className="flex-1 flex items-center justify-center mt-6 px-2 w-full">
                                         <img
                                             src={voucher.logo}
                                             alt={voucher.brand}
-                                            className="max-h-[74px] max-w-[86px] object-contain"
+                                            /* FIXED: Added object-contain so logos never stretch wildly */
+                                            className={`object-contain ${logoClasses[voucher.brand] || "max-h-[73px] max-w-[86px]"}`}
                                         />
                                     </div>
 
-                                    {/* 2. FIXED: Brand & Price are stacked and text-centered */}
-                                    <div className="flex flex-col items-center text-center mt-3 w-full">
-                                        <h3 className="text-[17px] font-bold text-gray-900 leading-none">
+                                    {/* FIXED: Removed the border-2 and added mt-auto to anchor the text to the bottom of the card */}
+                                    <div className="flex flex-col items-center text-center w-full pb-3 px-2 mt-auto">
+                                        <h3 className="text-[16px] font-bold text-[#1C1B1B] leading-none mb-1">
                                             {voucher.brand}
                                         </h3>
-
+                                        <p className="text-[11px] text-[#6B7280] tracking-tight">
+                                            {voucher.price}
+                                        </p>
                                     </div>
-                                    <p className="text-[11px] text-[#6B7280] tracking-tight mt-1 ">
-                                        {voucher.price}
-                                    </p>
-
-                                    {/* Decorative Separator Line pushed to bottom */}
                                 </div>
                             ))}
                         </div>
@@ -474,55 +483,51 @@ const renderIcon = (icon) => {
                             </div>
                         )}
                     </main>
-
-                     
-
-
                 </div>
-                
-            </div>
-             <div className="max-w-[1210px] max-h-[118px] rounded-[24px] bg-[#FFEDEE] px-1 py-8 md:px-8 lg:px-16 mx-auto  gap-6">
-            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6 ">
-                {features.map((feature) => (
+                <div className="max-w-[1210px] max-h-[118px] rounded-[24px] mt-10 bg-[#FFEDEE] px-1 py-8 md:px-8 lg:px-16 mx-auto  gap-6">
+                    <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6 ">
+                        {features.map((feature) => (
 
-                    <div key={feature.id} className="flex items-center gap-4 min-w-0 ">
-                        {/* Icon Box */}
-                        <div className="flex h-11.75 w-11.75 flex-shrink-0 items-center justify-center rounded-[18px] bg-white text-[#8C1822] shadow-sm">
-                            {renderIcon(feature.icon)}
-                        </div>
-
-                        {/* Text */}
-                        <div className="flex flex-col justify-center">
-                            <h3 className="text-[16px]  font-semibold text-[#901c27] ">
-                                {feature.title}
-                            </h3>
-
-                            {feature.isRating ? (
-                                <div className="mt-1 flex items-center gap-1">
-                                    {[...Array(5)].map((_, index) => (
-                                        <svg
-                                            key={index}
-                                            className="h-4 w-4 fill-current text-yellow-400"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                        </svg>
-                                    ))}
-
-                                    <span className="ml-1 text-[14px] text-[#1C1B1BCC]">
-                                        {feature.description}
-                                    </span>
+                            <div key={feature.id} className="flex items-center gap-4 min-w-0 ">
+                                {/* Icon Box */}
+                                <div className="flex h-11.75 w-11.75 flex-shrink-0 items-center justify-center rounded-[18px] bg-white text-[#8C1822] shadow-sm">
+                                    {renderIcon(feature.icon)}
                                 </div>
-                            ) : (
-                                <p className="mt-1 text-sm ">
-                                    {feature.description}
-                                </p>
-                            )}
-                        </div>
+
+                                {/* Text */}
+                                <div className="flex flex-col justify-center">
+                                    <h3 className="text-[16px]  font-semibold text-[#901c27] ">
+                                        {feature.title}
+                                    </h3>
+
+                                    {feature.isRating ? (
+                                        <div className="mt-1 flex items-center gap-1">
+                                            {[...Array(5)].map((_, index) => (
+                                                <svg
+                                                    key={index}
+                                                    className="h-4 w-4 fill-current text-yellow-400"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                                </svg>
+                                            ))}
+
+                                            <span className="ml-1 text-[14px] text-[#1C1B1BCC]">
+                                                {feature.description}
+                                            </span>
+                                        </div>
+                                    ) : (
+                                        <p className="mt-1 text-sm ">
+                                            {feature.description}
+                                        </p>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
-        </div>
+
         </div>
     );
 }

@@ -32,7 +32,7 @@ import starbucks from "../../../public/images/starbucks.png";
 import lock from "../../../public/images/lock.png";
 import Gift from "../../../public/images/gift.svg";
 import success from "../../../public/images/success.svg";
-
+import FeatureBanner from './FeatureBanner';
 export default function CashbackCardList() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -75,28 +75,28 @@ const features = [
         id: "secure-payments",
         title: "100% Secure Payments",
         description: "256-bit SSL Encrypted",
-        icon: '/images/lock.png',
+        icon: '/images/lock.svg',
         isRating: false,
     },
     {
         id: "instant-delivery",
         title: "Instant Code Delivery",
         description: "Get Vouchers In Seconds",
-        icon: '/images/Thunder.png',
+        icon: '/images/thunder.g',
         isRating: false,
     },
     {
         id: "customer-support",
         title: "24/7 Customer Support",
         description: "Help available round the clock",
-        icon: '/images/Headphones.png',
+        icon: '/images/headphones.png',
         isRating: false,
     },
     {
         id: "trusted-users",
         title: "Trusted By 1M+ Users",
         description: "4.8/5",
-        icon: '/images/Vector.svg',
+        icon: '/images/vector.svg',
         isRating: true,
     },
 ];
@@ -215,7 +215,7 @@ const renderIcon = (icon) => {
 
   return (
     <div className="min-h-screen  p-4 md:p-8">
-      <div className="max-w-[1240px] pt-20  mx-auto">
+      <div className="max-w-[1240px] pt-12  mx-auto">
 
         {/* Main 12-Column Grid */}
         <div className="flex flex-row gap-6 items-start">
@@ -521,7 +521,7 @@ const renderIcon = (icon) => {
         </div>
 
         {/* Dynamic Carousel Section */}
-        <div className="mt-12 bg-white rounded-[24px] p-6 border border-gray-100 shadow-sm max-w-[1222px] w-full">
+        <div className=" w-[1226px] bg-white rounded-[24px] p-6  border border-gray-100 shadow-sm max-w-[1222px] w-full">
           <div className='flex justify-between items-center mb-6'>
             <h1 className='text-2xl font-bold text-gray-900'>You May Also Like</h1>
             <button className="text-[#901C27] font-semibold flex items-center transition-colors">
@@ -529,7 +529,7 @@ const renderIcon = (icon) => {
             </button>
           </div>
 
-          <div className="flex items-center gap-5 justify-center">
+          <div className=" flex items-center gap-2 justify-center">
             <button
               onClick={() => setCurrentIndex(prev => Math.max(0, prev - 1))}
               disabled={currentIndex === 0}
@@ -539,7 +539,7 @@ const renderIcon = (icon) => {
               <ChevronLeft size={18} />
             </button>
 
-            <div className="max-w-[1197px] w-full overflow-hidden px-0.5 py-1">
+            <div className="max-w-[1197px]   w-full overflow-hidden px-0.5 py-1">
               <div
                 className="flex flex-row gap-4 transition-transform duration-300 ease-out"
                 style={{ transform: `translateX(-${currentIndex * (217 + 16)}px)` }}
@@ -579,47 +579,8 @@ const renderIcon = (icon) => {
         </div>
 
         {/* Global Banner Strip */}
-        <div className="max-w-[1210px] mt-4 max-h-[118px] rounded-[24px] bg-[#FFEDEE] px-1 py-8 md:px-8 lg:px-16 mx-auto  gap-6">
-            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6 ">
-                {features.map((feature) => (
-
-                    <div key={feature.id} className="flex items-center gap-4 min-w-0 ">
-                        {/* Icon Box */}
-                        <div className="flex h-11.75 w-11.75 flex-shrink-0 items-center justify-center rounded-[18px] bg-white text-[#8C1822] shadow-sm">
-                            {renderIcon(feature.icon)}
-                        </div>
-
-                        {/* Text */}
-                        <div className="flex flex-col justify-center">
-                            <h3 className="text-[16px]  font-semibold text-[#901c27] ">
-                                {feature.title}
-                            </h3>
-
-                            {feature.isRating ? (
-                                <div className="mt-1 flex items-center gap-1">
-                                    {[...Array(5)].map((_, index) => (
-                                        <svg
-                                            key={index}
-                                            className="h-4 w-4 fill-current text-yellow-400"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                        </svg>
-                                    ))}
-
-                                    <span className="ml-1 text-[14px] text-[#1C1B1BCC]">
-                                        {feature.description}
-                                    </span>
-                                </div>
-                            ) : (
-                                <p className="mt-1 text-sm ">
-                                    {feature.description}
-                                </p>
-                            )}
-                        </div>
-                    </div>
-                ))}
-            </div>
+        <div className="mt-10">
+          <FeatureBanner/>
         </div>
 
       </div>

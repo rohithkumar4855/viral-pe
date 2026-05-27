@@ -19,7 +19,7 @@ export default function loginpage() {
   };
 
   return (
-    <div className="pt-20  min-h-screen">
+    <div className="pt-20  min-h-screen gap-4">
       <Home />
       <Revenue />
       <Heropage />

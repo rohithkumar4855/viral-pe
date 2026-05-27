@@ -6,7 +6,7 @@ import friendsicon from "../../../public/images/friends.svg";
 import refericon from "../../../public/images/referlink.svg"
 import twocoinicon from "../../../public/images/twocoins.svg";
 import { ArrowRight } from "lucide-react";
-
+import FeatureBanner from './FeatureBanner';
 import {
   Share2,
   Copy,
@@ -212,7 +212,7 @@ export default function ReferAndEarnFlex() {
           </div>
 
           {/* 3. My Referrals List */}
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 w-full lg:w-[721px] lg:h-[255px] flex flex-col">
+          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 w-full lg:w-[721px] lg:h-[342px] flex flex-col">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold text-gray-900">My Referrals</h2>
               <button className="text-sm font-bold text-[#780A1D] flex items-center gap-1 ">
@@ -221,7 +221,7 @@ export default function ReferAndEarnFlex() {
               </button>
             </div>
 
-            <div className="flex flex-col divide-y divide-gray-100 overflow-y-auto pr-2 custom-scrollbar">
+            <div className="flex flex-col divide-y divide-gray-100  pr-2 overflow-hidden auto">
               {myReferrals.map((user) => (
                 <div key={user.id} className="py-3.5 flex justify-between items-center">
                   <div className="flex items-center gap-4">
@@ -376,6 +376,9 @@ export default function ReferAndEarnFlex() {
 
         </div>
 
+      </div>
+      <div className='mt-8'> 
+      <FeatureBanner/>
       </div>
     </div>
   );
