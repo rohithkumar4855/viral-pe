@@ -210,7 +210,7 @@ export default function Heropage() {
                                 </h1>
                             </div>
                             <div className="bg-white w-[200px] lg:w-[222px] py-1.5 rounded-[4px] flex items-center justify-center shadow-md">
-                                <h1 className="text-[9px] lg:text-[10px] text-[#222222CC] text-center px-2">
+                                <h1 className="text-[9px] lg:text-[10px] text-[#222222CC] text-center">
                                     Earn cashback on every recharge & bill payment
                                 </h1>
                             </div>
