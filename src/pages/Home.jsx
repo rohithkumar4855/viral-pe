@@ -1,5 +1,5 @@
 import Heropage from "../components/home/Hero";
-import GrowingTogether from "../components/home/EarningCard";
+import GrowingTogether from "../components/home/Earningcard";
 import PopularVouchers from "../components/home/Vouchers";
 import Customersupport from "../components/home/Customersupport";
 import PromotionalCards from "../components/home/Promotionalcards";
